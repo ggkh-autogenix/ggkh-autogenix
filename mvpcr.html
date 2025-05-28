@@ -4,228 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agentic AI Product: MVP Consultant Requirements</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #0056b3; /* Darker blue for accents */
-            --secondary-color: #e0f2f7; /* Light blue for background */
-            --text-color: #333;
-            --heading-color: #1a1a1a;
-            --border-color: #ddd;
-            --light-grey: #f8f8f8;
-            --accent-color: #28a745; /* Green for "Apply Now" or call to action */
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            color: var(--heading-color);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.1em;
-            color: #555;
-            font-weight: 300;
-        }
-
-        section {
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--light-grey);
-            padding-bottom: 10px;
-            font-weight: 600;
-        }
-
-        h3 {
-            font-size: 1.3em;
-            color: var(--heading-color);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            background: var(--light-grey);
-            margin-bottom: 10px;
-            padding: 15px 20px;
-            border-left: 5px solid var(--primary-color);
-            border-radius: 5px;
-            display: flex;
-            align-items: flex-start;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        ul li strong {
-            color: var(--primary-color);
-            min-width: 150px; /* Aligns the titles */
-            display: inline-block;
-            margin-right: 15px;
-        }
-
-        ul li .description {
-            flex-grow: 1;
-        }
-
-        .highlight {
-            background-color: #fff3cd; /* Light yellow for emphasis */
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: 600;
-            color: #856404;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: #777;
-            font-size: 0.9em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 20px;
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            h3 {
-                font-size: 1.1em;
-            }
-
-            ul li {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            ul li strong {
-                margin-bottom: 5px;
-                min-width: unset;
-            }
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-100 text-gray-800;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>🚀 Agentic AI Product: MVP Consultant Requirements</h1>
-            <p>We are seeking a **strategic and execution-focused MVP Consultant** to lead the transformation of our Agentic AI Agent-Based Human Behavior and Utilization Monitoring System from a **Proof of Concept (POC) into a fully functional Minimum Viable Product (MVP)**.</p>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="container mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10 lg:p-12 max-w-4xl">
+        <header class="text-center mb-8 md:mb-12 border-b-2 border-blue-600 pb-6">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-800 mb-3 leading-tight">
+                <span class="text-blue-600">🚀</span> Agentic AI Product: MVP Consultant Requirements
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 font-light">
+                We are seeking a <strong class="font-semibold text-blue-700">strategic and execution-focused MVP Consultant</strong> to lead the transformation of our Agentic AI Agent-Based Human Behavior and Utilization Monitoring System from a <strong class="font-semibold text-blue-700">Proof of Concept (POC) into a fully functional Minimum Viable Product (MVP)</strong>.
+            </p>
         </header>
 
-        <section>
-            <h2>🎯 Consultant’s Core Responsibilities & Deliverables</h2>
-            <p>This section outlines the precise scope of work and expected outcomes the consultant will be responsible for.</p>
+        <section class="mb-8 md:mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6 pb-3 border-b border-gray-200">
+                🎯 Consultant’s Core Responsibilities & Deliverables
+            </h2>
+            <p class="text-base md:text-lg text-gray-700 mb-6">
+                This section outlines the precise scope of work and expected outcomes the consultant will be responsible for.
+            </p>
 
-            <ul>
-                <li>
-                    <strong>1. MVP Definition & Prioritization</strong>
-                    <div class="description">
+            <ul class="space-y-4">
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        1. MVP Definition & Prioritization
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Define core features for the first Agentic AI system version. Prioritize features based on market need, technical feasibility, and business value (e.g., manpower inefficiencies, operational blind spots, agriculture drone usage). Identify initial target vertical for MVP rollout (e.g., Gated Communities, Shopping Malls, Agriculture Sector).
                     </div>
                 </li>
-                <li>
-                    <strong>2. Product Roadmap & Technical Plan Development</strong>
-                    <div class="description">
-                        Create a phased roadmap with milestones, deliverables, and dependencies. Translate MVP features into technical specifications with the team, considering our tech stack (<span class="highlight">YOLOv8, MediaPipe/OpenPose, Node.js, Python, AWS/GCP/Azure</span>). Define integration architecture for CCTV/Drone-based data streams and alert/task systems.
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        2. Product Roadmap & Technical Plan Development
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
+                        Create a phased roadmap with milestones, deliverables, and dependencies. Translate MVP features into technical specifications with the team, considering our tech stack (<span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md font-medium">YOLOv8, MediaPipe/OpenPose, Node.js, Python, AWS/GCP/Azure</span>). Define integration architecture for CCTV/Drone-based data streams and alert/task systems.
                     </div>
                 </li>
-                <li>
-                    <strong>3. Oversight of Prototype to MVP Development</strong>
-                    <div class="description">
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        3. Oversight of Prototype to MVP Development
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Leverage existing POC (idle personnel, corridor monitoring). Guide development of AI models (Object Detection, Pose Estimation, Behavior Recognition), Real-Time Alert Engine, Task Allocation Module, and Admin Dashboard & Heatmap Reports. Guide edge-device integration (if required).
                     </div>
                 </li>
-                <li>
-                    <strong>4. Definition & Implementation of Testing & Quality Assurance</strong>
-                    <div class="description">
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        4. Definition & Implementation of Testing & Quality Assurance
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Establish clear testing protocols for MVP robustness, accuracy, and performance (addressing "Model Accuracy" risk). Address performance considerations for real-time video processing and AI inference.
                     </div>
                 </li>
-                <li>
-                    <strong>5. Initial Go-to-Market Strategy & Digital Marketing</strong>
-                    <div class="description">
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        5. Initial Go-to-Market Strategy & Digital Marketing
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Develop a basic GTM strategy, identifying early adopters and pilot clients. Outline initial user feedback mechanisms for MVP iteration. Define initial digital marketing channels and tactics (content strategy, social media, SEO) for early awareness and leads.
                     </div>
                 </li>
-                <li>
-                    <strong>6. Budget Management & Resource Allocation</strong>
-                    <div class="description">
-                        Help manage a development budget of <span class="highlight">INR 50 Lakhs</span> (MVP Build, Edge Device Integration, Cloud/Dashboard, Team/Tech Resources). Advise on optimal allocation of initial team and tech resources for maximum ROI.
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        6. Budget Management & Resource Allocation
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
+                        Help manage a development budget of <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md font-medium">INR 50 Lakhs</span> (MVP Build, Edge Device Integration, Cloud/Dashboard, Team/Tech Resources). Advise on optimal allocation of initial team and tech resources for maximum ROI.
                     </div>
                 </li>
-                <li>
-                    <strong>7. Hiring Strategy & Team Formation</strong>
-                    <div class="description">
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        7. Hiring Strategy & Team Formation
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Assist in defining key roles and responsibilities for the initial MVP team. Support the hiring process: advising on candidate profiles, interview strategies, and onboarding for critical early hires. Help establish foundational team structures and communication protocols.
                     </div>
                 </li>
-                <li>
-                    <strong>8. Project Management & Execution Framework</strong>
-                    <div class="description">
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        8. Project Management & Execution Framework
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Set up core project management framework and tools (e.g., for task tracking, documentation, communication). Implement and facilitate daily scrum calls or similar agile ceremonies. Plan and execute regular internal and external demos of MVP progress.
                     </div>
                 </li>
-                <li>
-                    <strong>9. Company Setup & Legal Foundations</strong>
-                    <div class="description">
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        9. Company Setup & Legal Foundations
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Guide company registration (e.g., Pvt Ltd in India), compliance, and regulatory needs. Advise on domain name acquisition, professional email systems, repositories, and online identity. Ensure essential legal documentation: Founders' Agreement, Consultant/Employee NDAs, IP Ownership Clauses, Client Proposal Templates.
                     </div>
                 </li>
-                <li>
-                    <strong>10. Patent Filing Support</strong>
-                    <div class="description">
+
+                <li class="bg-blue-50 p-5 rounded-lg shadow-sm border-l-4 border-blue-500 flex flex-col md:flex-row items-start md:items-center">
+                    <strong class="text-blue-800 text-lg md:text-xl font-semibold mb-2 md:mb-0 md:w-1/4 flex-shrink-0">
+                        10. Patent Filing Support
+                    </strong>
+                    <div class="description text-gray-700 md:ml-6 flex-grow">
                         Assist in preparing Invention Disclosure Documents (IDDs) and technical diagrams. Liaise with IP attorneys for patent search, drafting, and filing (India and international). Ensure NDA + No Patent Filing agreements are signed before any idea is shared externally.
                     </div>
                 </li>
             </ul>
         </section>
 
-        <footer>
+        <footer class="text-center mt-10 pt-6 border-t border-gray-200 text-gray-500 text-sm">
             <p>&copy; 2025 [Your Company Name]. All rights reserved.</p>
         </footer>
     </div>
