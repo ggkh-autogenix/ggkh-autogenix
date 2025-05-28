@@ -1,0 +1,39 @@
+  1.⁠ ⁠“From Cameras to Commands”
+Visual: A time-lapse of a messy area being cleaned after detection.
+Caption: Your CCTV can now assign tasks. Let AI manage your space in real-time!
+
+ 2.⁠ ⁠“Catch Idle Time Before It Costs You”
+Visual: Two side-by-side views – one with idle staff, one post-AI optimization.
+Caption: Identify idle workforce and maximize productivity – effortlessly.
+
+ 3.⁠ ⁠“CCTV Just Got a Brain”
+Visual: CCTV footage overlaid with AI-based annotations (bounding boxes, labels).
+Caption: We don’t just watch – we understand. Transform surveillance into intelligence.
+
+ 4.⁠ ⁠“Alert. Assign. Act.”
+Visual: Animated flow of event → alert → mobile notification → staff in action.
+Caption: See a leak? We alert your team before it floods your budget.
+
+ 5.⁠ ⁠“Smarter Farming Starts Here”
+Visual: Drone view of a farm with AI-detected irrigation/pest zones.
+Caption: From coconut trees to paddy fields, our AI spots what your eyes can’t.
+
+ 6.⁠ ⁠“What Your Cameras Miss, We Don’t”
+Visual: Glitched CCTV vs AI-enhanced footage catching anomalies.
+Caption: Trash overflow? Water leaks? Wrong parking? We've got eyes on everything.
+
+ 7.⁠ ⁠“Your Facility’s Virtual Supervisor”
+Visual: AI interface tracking staff movements and suggesting optimizations.
+Caption: It never sleeps, never forgets, and always optimizes.
+
+ 8.⁠ ⁠“Hospital Hygiene, AI Secured”
+Visual: Footage showing compliance checking in corridors or ICUs.
+Caption: Ensure hygiene compliance and patient safety with smart surveillance.
+
+ 9.⁠ ⁠“Max ROI. Minimum Manpower Waste.”
+Visual: A dashboard showing resource usage before/after AI deployment.
+Caption: Real-time insights = real operational savings.
+
+10.⁠ ⁠“Your CCTV is Talking Business Now”
+Visual: Overlay of CCTV with detected zones, alerts, and staff deployment.
+Caption: Don’t just record. React, optimize, and grow.
