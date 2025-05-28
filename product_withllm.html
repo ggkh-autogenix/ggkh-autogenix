@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Agentic AI-Powered Lens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8fafc; /* bg-slate-50 equivalent */
+            color: #475569; /* text-slate-700 equivalent */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #0D9488, #14B8A6); /* Teal gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #0D9488, #14B8A6);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.6);
+        }
+        .metric-box {
+            background-color: #e0f2fe;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .metric-box h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        .metric-box p {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 1.5rem;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:nth-child(even) {
+            background-color: #fdfefe;
+        }
+        tr:hover {
+            background-color: #f0f9ff;
+        }
+        td:first-child { border-top-left-radius: 0.75rem; border-bottom-left-radius: 0.75rem; }
+        td:last-child { border-top-right-radius: 0.75rem; border-bottom-right-radius: 0.75rem; }
+        th:first-child { border-top-left-radius: 0.75rem; }
+        th:last-child { border-top-right-radius: 0.75rem; }
+
+        .feature-box {
+            background-color: #f0fdfa; /* Light teal background for feature boxes */
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #99f6e4; /* Light teal border */
+        }
+        .feature-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+        .feature-box .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: #0D9488; /* Primary color for icons */
+        }
+        .feature-box h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .feature-box p {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+        .pro-box, .con-box, .risk-box {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .pro-box .icon, .con-box .icon, .risk-box .icon {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        .pro-box .icon { color: #22c55e; }
+        .con-box .icon { color: #ef4444; }
+        .risk-box .icon { color: #f97316; } /* Orange for risks */
+        .pro-box p, .con-box p, .risk-box p {
+            font-size: 0.95rem;
+            color: #333;
+        }
+        .pro-box:last-child, .con-box:last-child, .risk-box:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Chatbot specific styles */
+        #chatbot-container {
+            background-color: #f0fdfa; /* Light teal for chatbot */
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid #99f6e4;
+        }
+        #chat-display {
+            min-height: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .chat-message {
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            max-width: 80%;
+        }
+        .chat-message.user {
+            background-color: #e0f2fe;
+            align-self: flex-end;
+            text-align: right;
+        }
+        .chat-message.ai {
+            background-color: #e6e6fa;
+            align-self: flex-start;
+            text-align: left;
+        }
+        #chat-input-container {
+            display: flex;
+            gap: 0.75rem;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+        }
+        #ask-button {
+            background: linear-gradient(90deg, #0D9488, #14B8A6);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(13, 148, 136, 0.4);
+        }
+        #ask-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.6);
+        }
+        .loading-indicator {
+            display: none;
+            margin-top: 1rem;
+            text-align: center;
+            color: #0D9488;
+            font-weight: 500;
+        }
+
+        /* Nav and collapsible specific styles from user's snippet */
+        .nav-link { transition: color 0.3s ease, border-bottom-color 0.3s ease; }
+        .nav-link.active { color: #0D9488; border-bottom-color: #0D9488; }
+        .nav-link:hover { color: #0D9488; }
+        .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+        .collapsible-content.open { max-height: 1000px; /* Adjust as needed */ }
+        .clickable-card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+        .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+        .flow-step { border: 2px solid #0D9488; padding: 0.75rem; border-radius: 0.5rem; text-align: center; background-color: #F0FDFA; }
+        .flow-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #0D9488; margin: 0 0.5rem; }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.open .modal-content {
+            transform: translateY(0);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #64748b;
+            cursor: pointer;
+        }
+        .modal-loading {
+            text-align: center;
+            padding: 2rem;
+            color: #0D9488;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-teal-600">Agentic AI</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Overview</a>
+                        <a href="#technology" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">The Technology</a>
+                        <a href="#applications" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Applications</a>
+                        <a href="#business-case" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Business Case</a>
+                        <a href="#why-us" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Why Us?</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#overview" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Overview</a>
+            <a href="#technology" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">The Technology</a>
+            <a href="#applications" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Applications</a>
+            <a href="#business-case" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Business Case</a>
+            <a href="#why-us" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Why Us?</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <section id="hero" class="text-center py-12 md:py-20 bg-gradient-to-br from-teal-50 to-sky-50 rounded-xl shadow-lg">
+            <h4 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-teal-700 mb-6">
+                What if your cameras could truly think? <br class="hidden sm:inline"/>
+            </h4>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                Turn Camera Feeds Into Smart Workforce Decisions <br class="hidden sm:inline"/>
+            </p>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                Leveraging existing CCTV and drone infrastructure, our Agentic AI system transforms passive surveillance into actionable insights for operational excellence and revenue generation.
+            </p>
+            <a href="#overview" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-md transition duration-300">Discover How</a>
+        </section>
+
+        <section id="overview" class="py-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">The Challenge & Our Vision</h2>
+            <div class="card text-center mb-10 max-w-3xl mx-auto">
+                <p class="text-slate-600">Problem: Manual monitoring, missed insights. Solution: AI-powered automation.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-teal-700 mb-3">Problem Statement</h3>
+                    <div class="space-y-2 text-slate-600">
+                        <p>• Passive CCTV: Blind spots.</p>
+                        <p>• Inefficient staff deployment.</p>
+                        <p>• Unnoticed issues (waste, leaks).</p>
+                        <p>• Wasted resources, high costs.</p>
+                        <p>• Agri-sector: No real-time crop health.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-teal-700 mb-3">Invention Summary</h3>
+                    <div class="space-y-2 text-slate-600">
+                        <p>• Agentic AI: Smart CCTV/Drone.</p>
+                        <p>• YOLOv8, MediaPipe.</p>
+                        <p>• Custom behavior models.</p>
+                        <p>• Real-time alerts.</p>
+                        <p>• Auto task assignment.</p>
+                        <p>• Deep operational insights.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold text-teal-700 mb-6 text-center">Proposed Solution: How It Works</h3>
+                <div class="card text-center mb-8 max-w-2xl mx-auto">
+                    <p class="text-slate-600">AI Platform: Analyzes human activity, detects idle staff, recommends tasks, issues real-time alerts. From existing feeds.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flow-step">CCTV/Drone Feed</div>
+                    <div class="flow-arrow hidden md:block">&rarr;</div> <div class="flow-arrow md:hidden">&darr;</div>
+                    <div class="flow-step">Agentic AI Data Processing <br/>(Object Detection, Pose Estimation, Behavior Analysis)</div>
+                    <div class="flow-arrow hidden md:block">&rarr;</div> <div class="flow-arrow md:hidden">&darr;</div>
+                    <div class="flow-step">Event Detection & Analysis <br/>(Idle, Anomalies)</div>
+                    <div class="flow-arrow hidden md:block">&rarr;</div> <div class="flow-arrow md:hidden">&darr;</div>
+                    <div class="flow-step">Task Allocation & Real-Time Alerts</div>
+                </div>
+                <div class="card text-center mt-6 text-sm max-w-2xl mx-auto">
+                    <p class="text-slate-500">Simplified flow: Data input to actionable output. Smarter workforce/facility management.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology" class="py-16 bg-slate-100 rounded-lg scroll-mt-16">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">The Technology Backbone</h2>
+            <div class="card text-center mb-10 max-w-3xl mx-auto">
+                <p class="text-slate-600">Cutting-edge AI. Robust cloud. Real-time insights. Automation.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2">AI Models</h4>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>YOLOv8 (Object Detection)</li>
+                        <li>MediaPipe/OpenPose (Pose Estimation)</li>
+                        <li>Custom Behavior Recognition Models</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2">Video Integration</h4>
+                    <p class="text-slate-600">RTSP/HTTP for CCTV feeds</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2">Backend</h4>
+                    <p class="text-slate-600">Node.js, Python (Flask/Django)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2">Frontend</h4>
+                    <p class="text-slate-600">React.js, Angular</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2">Cloud Infrastructure</h4>
+                    <p class="text-slate-600">AWS, Google Cloud, Azure</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h4 class="text-xl font-semibold text-teal-600 mb-2">Database & Comms</h4>
+                    <p class="text-slate-600">PostgreSQL, MongoDB; WebSocket for alerts</p>
+                </div>
+            </div>
+            <h3 class="text-2xl font-semibold text-center text-slate-800 mb-6">Key Functional Capabilities</h3>
+            <div id="capabilities-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            </div>
+        </section>
+
+        <section id="applications" class="py-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Applications Across Industries</h2>
+            <div class="card text-center mb-10 max-w-3xl mx-auto">
+                <p class="text-slate-600">Versatile solutions: Enhance efficiency, safety, experience. Retail to agriculture. Click for ROI.</p>
+            </div>
+            <div id="use-cases-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+        </section>
+
+        <section id="business-case" class="py-16 bg-slate-100 rounded-lg scroll-mt-16">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">The Business Case</h2>
+            <div class="card text-center mb-10 max-w-3xl mx-auto">
+                <p class="text-slate-600">Financials & Market: Subscriptions. MVP funding. Projected returns. Team. Competition. Strong ROI. Growth.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-teal-700 mb-4">Subscription Pricing</h3>
+                    <table class="w-full text-left text-sm text-slate-600">
+                        <thead class="bg-slate-50 text-xs text-slate-700 uppercase">
+                            <tr><th class="px-4 py-2">Plan</th><th class="px-4 py-2">Price/Month (INR)</th><th class="px-4 py-2">Details</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b"><td class="px-4 py-2 font-medium">Basic</td><td class="px-4 py-2">20,000</td><td class="px-4 py-2">Up to 10 CCTV cameras</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 font-medium">Enterprise</td><td class="px-4 py-2">50,000</td><td class="px-4 py-2">Up to 50 CCTV cameras</td></tr>
+                            <tr><td class="px-4 py-2 font-medium">Custom</td><td class="px-4 py-2">1,00,000+</td><td class="px-4 py-2">Large facilities or specialized use cases</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-teal-700 mb-4">Funding Requirements for MVP</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>Prototype to MVP Development: <span class="font-semibold text-teal-600">INR 15 Lakhs</span></li>
+                        <li>Edge Device Integration: <span class="font-semibold text-teal-600">INR 5 Lakhs</span></li>
+                        <li>Dashboard & Cloud Infrastructure: <span class="font-semibold text-teal-600">INR 15 Lakhs</span></li>
+                        <li>Initial Team & Tech Resources: <span class="font-semibold text-teal-600">INR 15 Lakhs</span></li>
+                        <li class="border-t pt-2 mt-2">Total Funding Required: <span class="font-bold text-xl text-teal-700">INR 50 Lakhs</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Client Growth (Year 1)</h3>
+                    <div class="chart-container"><canvas id="clientGrowthChart"></canvas></div>
+                    <div class="card text-center mt-2 text-sm">
+                        <p class="text-slate-500">Targeting 50 clients in the first year across different subscription tiers.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Financials (Year 1)</h3>
+                    <div class="chart-container"><canvas id="financialsYear1Chart"></canvas></div>
+                    <div class="card text-center mt-2 text-sm">
+                        <p class="text-slate-500">Based on client growth, projecting significant revenue and profit in the first year.</p>
+                        <p class="text-center text-2xl font-bold text-teal-600 mt-4">Year 1 ROI: ~528%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-12">
+                <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Proposed Team Structure (15-18 People)</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center" id="teamStructureContainer">
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold text-teal-700 mb-4">Competitive Landscape</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-slate-600">
+                        <thead class="bg-slate-50 text-xs text-slate-700 uppercase">
+                            <tr>
+                                <th class="px-4 py-2">Feature</th>
+                                <th class="px-4 py-2">DeepVision</th>
+                                <th class="px-4 py-2">Corti.ai</th>
+                                <th class="px-4 py-2">Veezoo</th>
+                                <th class="px-4 py-2">LiveEarth</th>
+                                <th class="px-4 py-2 text-teal-600 font-bold">Our Proposal (Agentic AI)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="competitorTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="py-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Why Choose Agentic AI?</h2>
+            <div class="card text-center mb-10 max-w-3xl mx-auto">
+                <p class="text-slate-600">Agentic AI: Unique advantages. Addresses challenges. Drives customer revenue. Cost-effective automation.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">Pros</h3>
+                    <div class="space-y-4" id="pros-list-container"></div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-3">Cons</h3>
+                    <div class="space-y-4" id="cons-list-container"></div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-12">
+                <h3 class="text-2xl font-semibold text-orange-600 mb-3 text-center">Key Risks</h3>
+                <div class="grid md:grid-cols-2 gap-4" id="risks-list-container"></div>
+            </div>
+
+            <div class="bg-teal-50 p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-teal-700 mb-6 text-center">Revenue Generation Opportunities for Your Business</h3>
+                <div class="card text-center mb-8 max-w-2xl mx-auto">
+                    <p class="text-slate-600">Optimize operations. Unlock new revenue. Enhance satisfaction. Service upsells. Data monetization.</p>
+                </div>
+                <div id="revenue-opportunities-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center bg-white p-8 rounded-lg shadow-xl border border-teal-200">
+                <h3 class="text-2xl font-semibold text-slate-800 mb-3">Conclusion</h3>
+                <div class="card max-w-3xl mx-auto">
+                    <p class="text-slate-600">Agentic AI: Real-time automation. Behavioral insights. Scalable SaaS. Cost-effective. High ROI. Strategic advantage.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-blue-50">
+            <div class="container">
+                <div id="chatbot-container" class="card">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-robot text-indigo-500 mr-3"></i> Ask Agentic AI ✨
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-4">
+                        Have a question about Agentic AI? Ask our intelligent assistant!
+                    </p>
+                    <div id="chat-display">
+                        <div class="chat-message ai">Hello! How can I help you understand Agentic AI better today?</div>
+                    </div>
+                    <div id="chat-input-container">
+                        <input type="text" id="user-input" placeholder="Type your question here..." class="flex-grow">
+                        <button id="ask-button" class="btn-primary">
+                            Ask <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                    <div id="loading-indicator" class="loading-indicator">
+                        <i class="fas fa-spinner fa-spin mr-2"></i> Thinking...
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 py-8 text-center">
+        <p>&copy; <span id="currentYear"></span> Agentic AI. All rights reserved.</p>
+        <p class="text-sm">Transforming Surveillance into Actionable Intelligence.</p>
+    </footer>
+
+    <div id="llm-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+            <h3 id="modal-title" class="text-2xl font-bold text-gray-800 mb-4"></h3>
+            <div id="modal-content-area" class="text-gray-700">
+                <div class="modal-loading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin mr-2"></i> Generating insights...
+                </div>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Data from PDF
+    const capabilitiesData = [
+        { name: "Elevator & Corridor Surveillance", description: "Monitors activity for safety & efficiency." },
+        { name: "Waste Overflow Detection", description: "Alerts staff for full bins, ensuring cleanliness." },
+        { name: "Wrong Parking Alerts", description: "Identifies incorrect parking, notifies security." },
+        { name: "Water Leakage Monitoring", description: "Detects leaks early, prevents damage & waste." },
+        { name: "Idle Time Reduction & Task Allocation", description: "Identifies underutilized staff, suggests reallocations." },
+        { name: "Agricultural Field Monitoring", description: "Analyzes crop health, irrigation, pests in fields." }
+    ];
+
+    const useCasesData = [
+        { id: "gated-communities", name: "Gated Communities", description: "Monitor common areas, optimize staff.", roi: "Reduces errors, boosts satisfaction." },
+        { id: "shopping-malls", name: "Shopping Malls", description: "Track crowd, staff, cleaning needs.", roi: "Improved experience, higher foot traffic." },
+        { id: "public-transport", name: "Public Transport Hubs", description: "Monitor luggage, garbage, optimize cleaning.", roi: "Reduced delays, improved passenger satisfaction." },
+        { id: "hospitals-education", name: "Hospitals & Educational Institutions", description: "Ensure hygiene, monitor activity, optimize utility.", roi: "Improved efficiency, reduced risks." },
+        { id: "office-buildings", name: "Office Buildings & Co-working Spaces", description: "Monitor housekeeping, maintenance, staff.", roi: "Increased productivity, reduced costs." },
+        { id: "retail-stores", name: "Retail Stores & Supermarkets", description: "Detect congestion, optimize staff, cleanliness.", roi: "Increased sales, improved cleanliness." },
+        { id: "agriculture", name: "Agriculture", description: "Monitor crops (coconut, paddy) via drone/CCTV.", roi: "Increased yield, optimized labor." }
+    ];
+    
+    const teamStructureData = [
+        { role: "Product Manager", size: 1, icon: "fas fa-briefcase" },
+        { role: "AI/ML Engineers", size: 3, icon: "fas fa-robot" },
+        { role: "Backend Developers", size: 2, icon: "fas fa-server" },
+        { role: "Frontend Developers", size: 2, icon: "fas fa-code" },
+        { role: "Cloud Infra Engineer", size: 1, icon: "fas fa-cloud" },
+        { role: "QA/Test Engineers", size: 2, icon: "fas fa-bug" },
+        { role: "Sales & Marketing", size: 3, icon: "fas fa-bullhorn" },
+        { role: "Customer Support", size: 2, icon: "fas fa-headset" },
+        { role: "Operations & Admin", size: 2, icon: "fas fa-cogs" }
+    ];
+
+    const competitorData = [
+        { feature: "Real-Time Task Optimization", deepvision: "✓", corti: "✓", veezoo: "✓", liveearth: "✓", our_proposal: "✓" },
+        { feature: "Integration with Existing CCTV/Drone", deepvision: "✓", corti: "✓", veezoo: "✓", liveearth: "", our_proposal: "✓" },
+        { feature: "Human Activity and Behavior Analysis", deepvision: "", corti: "✓", veezoo: "", liveearth: "", our_proposal: "✓" },
+        { feature: "Resource Utilization Insights", deepvision: "✓", corti: "", veezoo: "✓", liveearth: "✓", our_proposal: "✓" },
+        { feature: "Real-Time Alerts", deepvision: "✓", corti: "✓", veezoo: "✓", liveearth: "", our_proposal: "✓" },
+        { feature: "Cloud-Based SaaS Platform", deepvision: "✓", corti: "✓", veezoo: "✓", liveearth: "✓", our_proposal: "✓" },
+        { feature: "Task Assignment Module", deepvision: "", corti: "", veezoo: "", liveearth: "", our_proposal: "✓" },
+        { feature: "Cross-Sector Applicability", deepvision: "", corti: "", veezoo: "", liveearth: "", our_proposal: "✓" },
+        { feature: "Cost-Effective Pricing (Subscription)", deepvision: "✓", corti: "✓", veezoo: "✓", liveearth: "✓", our_proposal: "✓" },
+    ];
+
+    const prosData = [
+        "Seamless Integration with Existing CCTV/Drone.",
+        "Real-Time Task Optimization: Boosts efficiency.",
+        "Cloud-Based SaaS Model: Scalable & accessible.",
+        "Cross-Sector Applicability: Versatile solution.",
+        "Cost-Effective Pricing: Affordable subscription.",
+        "Behavioral Insights: Smarter decision-making."
+    ];
+    const consData = [
+        "Dependence on Existing CCTV Quality: Performance varies.",
+        "Initial Setup Cost: Requires some investment.",
+        "Privacy and Security Concerns: Sensitive data handling.",
+        "Market Education: Customers need to grasp full ROI.",
+        "Requires Regular Maintenance and Updates: Continuous improvements.",
+        "Implementation Complexity: Customization for various systems."
+    ];
+    const risksData = [
+        "Market Adoption: Slow AI adoption in traditional industries.",
+        "Technology Dependence: Relies on AI/cloud, needs robust support.",
+        "Data Privacy: Regulatory hurdles for sensitive video data.",
+        "Model Accuracy: Ongoing training for high accuracy.",
+        "Customer Retention: Churn risk if ROI not seen or system not maintained."
+    ];
+
+    const revenueOpportunitiesData = [
+        { title: "Higher Customer Retention & Satisfaction", details: "Improve experiences for Retail, Gated Communities, Malls. Leads to repeat visits, higher occupancy, increased revenue.", icon: "fas fa-users" },
+        { title: "Increased Agricultural Yield & Quality", details: "Optimize interventions for Farms & Agri-Cooperatives. Increase yield, reduce crop loss, better prices.", icon: "fas fa-seedling" },
+        { title: "Smart Space Monetization", details: "For Coworking Spaces, Office Parks. Identify idle spaces, convert to rentable/premium offerings.", icon: "fas fa-dollar-sign" },
+        { title: "Premium Service Upsells", details: "For Facilities & Cleaning Companies. Justify higher contract value with performance analytics, AI insights.", icon: "fas fa-hand-holding-usd" },
+        { title: "Reduced Penalties & Compliance Breaches", details: "For Hospitals, Airports, Schools. Avoid fines, improve compliance, maintain operational continuity.", icon: "fas fa-shield-alt" },
+        { title: "Data Commercialization", details: "For Enterprise Customers. Anonymized data monetization or strategic planning.", icon: "fas fa-database" }
+    ];
+
+
+    // DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('main section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const options = {
+            rootMargin: '-50% 0px -50% 0px', // Adjust as needed to trigger halfway through section
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+
+        // Populate Key Functional Capabilities
+        const capabilitiesContainer = document.getElementById('capabilities-container');
+        capabilitiesData.forEach(cap => {
+            const div = document.createElement('div');
+            div.className = 'bg-white p-4 rounded-lg shadow clickable-card cursor-pointer';
+            div.innerHTML = `<h5 class="font-semibold text-md text-teal-700 mb-1">${cap.name}</h5>
+                             <p class="text-sm text-slate-500 collapsible-content">${cap.description}</p>`;
+            div.addEventListener('click', () => {
+                div.querySelector('.collapsible-content').classList.toggle('open');
+            });
+            capabilitiesContainer.appendChild(div);
+        });
+
+        // Populate Use Cases
+        const useCasesContainer = document.getElementById('use-cases-container');
+        useCasesData.forEach(uc => {
+            const card = document.createElement('div');
+            card.className = 'bg-white p-6 rounded-lg shadow-lg clickable-card';
+            card.innerHTML = `
+                <h4 class="text-xl font-semibold text-teal-700 mb-2">${uc.name}</h4>
+                <p class="text-slate-600 text-sm mb-3 h-16 overflow-hidden">${uc.description}</p>
+                <button class="text-teal-600 hover:text-teal-800 font-semibold text-sm read-more-btn">Read More & ROI</button>
+                <button class="ml-2 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold py-1 px-2 rounded-full use-case-llm-btn">Deep Dive ✨</button>
+                <div class="mt-3 text-sm text-slate-500 collapsible-content"><strong>ROI:</strong> ${uc.roi}</div>
+            `;
+            card.querySelector('.read-more-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                card.querySelector('.collapsible-content').classList.toggle('open');
+                e.target.textContent = e.target.textContent.includes('Read More') ? 'Show Less' : 'Read More & ROI';
+            });
+            // LLM button for Use Cases
+            card.querySelector('.use-case-llm-btn').addEventListener('click', () => {
+                openModal(`Deep Dive: ${uc.name}`, `Generate a detailed scenario or specific examples of how 'Agentic AI' (an AI-powered human behavior and utilization monitoring system using CCTV/Drones for real-time task automation and insights) would operate in a ${uc.name} environment. Focus on practical applications and benefits. Keep it concise, around 3-4 sentences.`);
+            });
+            useCasesContainer.appendChild(card);
+        });
+
+        // Populate Team Structure
+        const teamStructureContainer = document.getElementById('teamStructureContainer');
+        teamStructureData.forEach(member => {
+            const div = document.createElement('div');
+            div.className = 'bg-teal-50 p-4 rounded-lg shadow flex flex-col items-center justify-center';
+            div.innerHTML = `
+                <i class="${member.icon} text-3xl text-teal-600 mb-2"></i>
+                <h4 class="font-semibold text-md text-teal-700">${member.role}</h4>
+                <p class="text-sm text-slate-600">${member.size} Person${member.size > 1 ? 's' : ''}</p>
+            `;
+            teamStructureContainer.appendChild(div);
+        });
+
+        // Populate Competitor Table
+        const competitorTableBody = document.getElementById('competitorTableBody');
+        competitorData.forEach(comp => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="px-4 py-2 font-medium">${comp.feature}</td>
+                <td class="px-4 py-2 text-center">${comp.deepvision}</td>
+                <td class="px-4 py-2 text-center">${comp.corti}</td>
+                <td class="px-4 py-2 text-center">${comp.veezoo}</td>
+                <td class="px-4 py-2 text-center">${comp.liveearth}</td>
+                <td class="px-4 py-2 text-center text-teal-600 font-bold">${comp.our_proposal}</td>
+            `;
+            competitorTableBody.appendChild(row);
+        });
+
+        // Populate Pros
+        const prosListContainer = document.getElementById('pros-list-container');
+        prosData.forEach(pro => {
+            const div = document.createElement('div');
+            div.className = 'pro-box';
+            div.innerHTML = `<i class="icon fas fa-check-circle"></i><p>${pro}</p>`;
+            prosListContainer.appendChild(div);
+        });
+
+        // Populate Cons
+        const consListContainer = document.getElementById('cons-list-container');
+        consData.forEach(con => {
+            const div = document.createElement('div');
+            div.className = 'con-box';
+            div.innerHTML = `<i class="icon fas fa-times-circle"></i><p>${con}</p>`;
+            consListContainer.appendChild(div);
+        });
+
+        // Populate Risks
+        const risksListContainer = document.getElementById('risks-list-container');
+        risksData.forEach(risk => {
+            const div = document.createElement('div');
+            div.className = 'risk-box flex-col items-start'; // Changed to flex-col for better layout with button
+            div.innerHTML = `
+                <div class="flex items-start w-full mb-2">
+                    <i class="icon fas fa-exclamation-triangle mr-2 mt-1"></i>
+                    <p class="flex-grow">${risk}</p>
+                </div>
+                <button class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold py-1 px-2 rounded-full risk-llm-btn self-end">Mitigate ✨</button>
+            `;
+            // LLM button for Risks
+            div.querySelector('.risk-llm-btn').addEventListener('click', () => {
+                openModal(`Mitigation Strategies:`, `Given the risk: '${risk}', suggest 2-3 concise mitigation strategies for 'Agentic AI' (an AI-powered human behavior and utilization monitoring system using CCTV/Drones for real-time task automation and insights). Focus on actionable steps.`);
+            });
+            risksListContainer.appendChild(div);
+        });
+
+        // Populate Revenue Generation Opportunities
+        const revenueOpportunitiesContainer = document.getElementById('revenue-opportunities-container');
+        revenueOpportunitiesData.forEach(opportunity => {
+            const div = document.createElement('div');
+            div.className = 'feature-box';
+            div.innerHTML = `
+                <i class="icon ${opportunity.icon}"></i>
+                <h4>${opportunity.title}</h4>
+                <p>${opportunity.details}</p>
+            `;
+            revenueOpportunitiesContainer.appendChild(div);
+        });
+
+        // Chart.js for Client Growth
+        const clientGrowthCtx = document.getElementById('clientGrowthChart').getContext('2d');
+        new Chart(clientGrowthCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Basic (30)', 'Enterprise (15)', 'Custom (5)'],
+                datasets: [{
+                    label: 'Number of Clients',
+                    data: [30, 15, 5],
+                    backgroundColor: [
+                        'rgba(13, 148, 136, 0.6)', // Teal
+                        'rgba(20, 184, 166, 0.6)', // Light Teal
+                        'rgba(45, 212, 191, 0.6)'  // Even Lighter Teal
+                    ],
+                    borderColor: [
+                        'rgba(13, 148, 136, 1)',
+                        'rgba(20, 184, 166, 1)',
+                        'rgba(45, 212, 191, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Clients'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Plan Type (Clients)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                        text: 'Projected Client Growth (Year 1)'
+                    }
+                }
+            }
+        });
+
+        // Chart.js for Financials Year 1
+        const financialsYear1Ctx = document.getElementById('financialsYear1Chart').getContext('2d');
+        new Chart(financialsYear1Ctx, {
+            type: 'line',
+            data: {
+                labels: ['Initial Investment', 'Total Revenue', 'Operational Costs', 'Net Profit'],
+                datasets: [{
+                    label: 'Amount (INR Lakhs)',
+                    data: [50, 222, 90, 132], // 50L, 2.22 Cr, 90L, 1.32 Cr
+                    backgroundColor: 'rgba(13, 148, 136, 0.2)',
+                    borderColor: 'rgba(13, 148, 136, 1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Amount (INR Lakhs)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Financial Metric'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                        text: 'Projected Financials (Year 1)'
+                    }
+                }
+            }
+        });
+
+
+        // Chatbot specific logic
+        const userInput = document.getElementById('user-input');
+        const askButton = document.getElementById('ask-button');
+        const chatDisplay = document.getElementById('chat-display');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message', sender);
+            messageDiv.textContent = text;
+            chatDisplay.appendChild(messageDiv);
+            chatDisplay.scrollTop = chatDisplay.scrollHeight;
+        }
+
+        async function callGeminiAPI(prompt, targetDisplay) {
+            targetDisplay.style.display = 'block'; // Show loading indicator for the target display
+            
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // Canvas will automatically provide this at runtime
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    return text; // Return the generated text
+                } else {
+                    console.error("Unexpected API response structure:", result);
+                    return "Error: Could not get a valid response from AI.";
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                return "Error: Failed to connect to the AI. Please try again.";
+            } finally {
+                targetDisplay.style.display = 'none'; // Hide loading indicator
+            }
+        }
+
+        // Chatbot button event listener
+        askButton.addEventListener('click', async () => {
+            const prompt = userInput.value.trim();
+            if (prompt) {
+                const responseText = await callGeminiAPI(prompt, loadingIndicator);
+                addMessage(responseText, 'ai');
+                userInput.value = '';
+            }
+        });
+
+        // Chatbot input field Enter key listener
+        userInput.addEventListener('keypress', async (e) => {
+            if (e.key === 'Enter') {
+                const prompt = userInput.value.trim();
+                if (prompt) {
+                    const responseText = await callGeminiAPI(prompt, loadingIndicator);
+                    addMessage(responseText, 'ai');
+                    userInput.value = '';
+                }
+            }
+        });
+
+        // Modal elements
+        const llmModalOverlay = document.getElementById('llm-modal-overlay');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalLoading = llmModalOverlay.querySelector('.modal-loading');
+
+        // Function to open the modal and fetch LLM content
+        async function openModal(title, prompt) {
+            modalTitle.textContent = title;
+            modalText.textContent = ''; // Clear previous content
+            modalLoading.style.display = 'block'; // Show modal loading
+            llmModalOverlay.classList.add('open');
+
+            const response = await callGeminiAPI(prompt, modalLoading);
+            modalText.textContent = response;
+            modalLoading.style.display = 'none'; // Hide modal loading
+        }
+
+        // Close modal event listener
+        modalCloseBtn.addEventListener('click', () => {
+            llmModalOverlay.classList.remove('open');
+        });
+
+        // Close modal if clicking outside content
+        llmModalOverlay.addEventListener('click', (e) => {
+            if (e.target === llmModalOverlay) {
+                llmModalOverlay.classList.remove('open');
+            }
+        });
+    });
+</script>
+</body>
+</html>
