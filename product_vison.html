@@ -6,166 +6,46 @@
     <title>The Agentic AI-Powered Lens</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Application Structure Plan: 
+        Theme: Interactive Dashboard & Informational Hub.
+        Structure:
+        1. Hero Section: Title, brief intro to problem/solution.
+        2. Navigation Bar: Overview | The Technology | Applications | Business Case | Why Us?
+        3. Overview Section (Default View): Problem, Invention, Proposed Solution, Visual flow diagram.
+        4. The Technology Section: AI Models, Core Components, Key Functional Capabilities (interactive).
+        5. Applications & Benefits Section: Interactive cards for Use Cases (Gated Communities, Malls, Agriculture, etc.) revealing ROI/benefits.
+        6. Business Case Section: Financials (Subscription Tiers, Funding, Projections with charts), Team Structure, Competitor Comparison.
+        7. Why Us? Section: Pros & Cons, Risks (collapsible), Revenue Generation Opportunities for Customers (interactive cards), Conclusion.
+        Key Interactions: Nav clicks scroll/show sections. Clickable cards for details. Charts for financial data.
+        User Flow: Linear or jump to sections. Interactive elements for deeper dives.
+        Justification: Breaks down dense report into digestible chunks. Interactivity enhances engagement and understanding for complex data. Prioritizes user understanding by guiding from general to specific.
+    -->
+    <!-- Visualization & Content Choices:
+        - Problem/Solution Overview: Text, Flow Diagram (HTML/CSS). Goal: Inform. Interaction: None. Justification: Context setting.
+        - Technology Stack: List with icons (HTML/CSS, Unicode). Goal: Inform. Interaction: Hover tooltips (optional). Justification: Clear tech presentation.
+        - Key Functional Capabilities: Interactive list/cards (HTML/CSS/JS). Goal: Inform/Organize. Interaction: Click to expand. Justification: Easy scan of features.
+        - Use Cases: Interactive cards (HTML/CSS/JS). Goal: Compare/Inform. Interaction: Click card for details. Justification: Focus on relevant industries, show benefits.
+        - Subscription Pricing/Funding: Table/Cards (HTML/CSS). Goal: Inform. Interaction: None. Justification: Clear financial info.
+        - Financial Projections (Client Growth, Revenue, Costs, Profit): Bar/Line Charts (Chart.js). Goal: Show Change/Compare. Interaction: Tooltips. Justification: Visualizes financial performance.
+        - ROI: Prominent text. Goal: Inform. Justification: Highlights key return.
+        - Team Structure: Cards/Graphic (HTML/CSS). Goal: Organize. Justification: Visualizes team.
+        - Competitor Comparison: HTML Table. Goal: Compare. Justification: Direct feature comparison.
+        - Pros & Cons / Risks: Accordion/Collapsible sections (HTML/CSS/JS). Goal: Inform/Organize. Interaction: Click to expand. Justification: Balanced info, no clutter.
+        - Revenue Generation for Customers: Interactive cards (HTML/CSS/JS). Goal: Inform/Highlight. Interaction: Click for details. Justification: Showcases client value.
+    -->
     <style>
-        /* Base font for the entire body, ensuring consistency */
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-
-        /* Chart container styles */
         .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
         @media (min-width: 768px) { .chart-container { height: 350px; } }
-
-        /* Navigation link styles for active state and hover effects */
         .nav-link { transition: color 0.3s ease, border-bottom-color 0.3s ease; }
         .nav-link.active { color: #0D9488; border-bottom-color: #0D9488; }
         .nav-link:hover { color: #0D9488; }
-
-        /* Collapsible content for details sections */
         .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-        .collapsible-content.open { max-height: 1000px; /* Adjust as needed to fit content */ }
-
-        /* Clickable card styles for interactive elements */
+        .collapsible-content.open { max-height: 1000px; /* Adjust as needed */ }
         .clickable-card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
         .clickable-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
-
-        /* Flow diagram step and arrow styling */
         .flow-step { border: 2px solid #0D9488; padding: 0.75rem; border-radius: 0.5rem; text-align: center; background-color: #F0FDFA; }
         .flow-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #0D9488; margin: 0 0.5rem; }
-
-        /* Styles specifically for the Unique Value Proposition (UVP) section */
-        .uvp-container {
-            max-width: 1000px;
-            width: 90%;
-            margin: 20px auto;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            box-sizing: border-box;
-        }
-        .uvp-container h1 {
-            color: #2c3e50;
-            text-align: center;
-            font-size: 2.8em;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 15px;
-        }
-        .uvp-container h2 {
-            color: #34495e;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;
-        }
-        .uvp-container h3 {
-            color: #3498db;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 1.4em;
-        }
-        .uvp-container p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-        }
-        .uvp-container table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-bottom: 30px;
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .uvp-container th, .uvp-container td {
-            border: 1px solid #bdc3c7;
-            padding: 15px;
-            text-align: left;
-            font-size: 1em;
-        }
-        .uvp-container th {
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .uvp-container tr:nth-child(even) {
-            background-color: #f8fcfd;
-        }
-        .uvp-container tr:hover {
-            background-color: #e0e0e0;
-        }
-        .uvp-container ul {
-            list-style: none;
-            padding: 0;
-            margin-left: 0;
-        }
-        .uvp-container ul li {
-            background-color: #e8f5e9;
-            border-left: 5px solid #4caf50;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-            position: relative;
-            font-size: 1.1em;
-        }
-        .uvp-container ul li h3 {
-            color: #388e3c;
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-size: 1.3em;
-        }
-        .uvp-container ul li:before {
-            content: "\2022";
-            color: #4caf50;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 10px;
-            top: 15px;
-        }
-
-        /* Styling for the summary statement block */
-        .summary-statement {
-            background-color: #d1ecf1;
-            border-left: 5px solid #007bff;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 1.3em;
-            color: #0c5460;
-            border-radius: 8px;
-            text-align: center;
-            font-style: italic;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        /* Canvas specific styles for the Vision/AI Brain visualization */
-        #visionCanvas {
-            display: block;
-            background-color: #fcfcfc;
-            border: 2px solid #3498db;
-            border-radius: 8px;
-            margin: 30px auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 768px) {
-            .uvp-container h1 { font-size: 2em; }
-            .uvp-container h2 { font-size: 1.5em; }
-            .uvp-container h3 { font-size: 1.2em; }
-            .uvp-container { padding: 20px; width: 95%; }
-            .uvp-container th, .uvp-container td { padding: 10px; }
-            .uvp-container ul li { padding: 10px 15px; font-size: 1em; }
-            .summary-statement { font-size: 1em; padding: 15px; }
-            #visionCanvas { width: 90%; }
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-700">
@@ -174,7 +54,7 @@
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
-                    <a href="#vision-summary-statement" class="font-bold text-xl text-teal-600">Vision</a>
+                    <span class="font-bold text-xl text-teal-600"></span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
@@ -182,7 +62,6 @@
                         <a href="#technology" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">The Technology</a>
                         <a href="#applications" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Applications</a>
                         <a href="#business-case" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Business Case</a>
-                        <a href="#unique-value-proposition" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">UVP</a>
                         <a href="#why-us" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Why Us?</a>
                     </div>
                 </div>
@@ -200,13 +79,16 @@
             <a href="#technology" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">The Technology</a>
             <a href="#applications" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Applications</a>
             <a href="#business-case" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Business Case</a>
-            <a href="#unique-value-proposition" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">UVP</a>
             <a href="#why-us" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Why Us?</a>
         </div>
     </header>
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <section id="hero" class="text-center py-12 md:py-20 bg-gradient-to-br from-teal-50 to-sky-50 rounded-xl shadow-lg">
+        <h2>Vison</h2>
+        <p class="summary-statement">
+            “We offer a true Agentic AI platform that not only sees and understands real-world behavior but also acts autonomously to optimize operations—bridging perception, reasoning, and execution across multiple industries in a unified system.”
+        </p>  
             <h4 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-teal-700 mb-6">
                 What if your cameras could truly think? <br class="hidden sm:inline"/>
             </h4>
@@ -366,121 +248,6 @@
             </div>
         </section>
 
-        <section id="unique-value-proposition" class="py-16 scroll-mt-16 bg-slate-50 rounded-lg uvp-container">
-            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Product Vision & Unique Value Proposition: Pivot Insights</h2>
-
-            <p class="text-center text-slate-600 mb-8">
-               We are bringing a uniquely integrated, real-world Agentic AI solution that combines autonomy, vision intelligence, and task execution in physical environments—a capability few others offer at this depth and practicality.
-            </p>
-
-            <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Problem-Solution-Value Matrix for Facility Managers</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Pain Point (Facility Managers)</th>
-                        <th>Agentic AI Unique Selling Point (USP)</th>
-                        <th>Why It’s Valuable</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lack of actionable insights from CCTV surveillance</td>
-                        <td>Transforms CCTV into smart workforce decision tool</td>
-                        <td>Converts passive feeds into active operational intelligence</td>
-                    </tr>
-                    <tr>
-                        <td>Inability to track idle or underutilized staff</td>
-                        <td>Idle Personnel Detection + Task Reallocation</td>
-                        <td>Boosts manpower efficiency and cuts labor waste</td>
-                    </tr>
-                    <tr>
-                        <td>Delayed identification of issues (leaks, garbage, unauthorized access)</td>
-                        <td>Real-Time Anomaly Detection and Alerts</td>
-                        <td>Prevents minor issues from escalating; saves time and repair costs</td>
-                    </tr>
-                    <tr>
-                        <td>No automation in assigning tasks to staff</td>
-                        <td>Autonomous Task Allocation Engine</td>
-                        <td>Reduces management load and speeds up response times</td>
-                    </tr>
-                    <tr>
-                        <td>Hard to scale or customize systems across sectors</td>
-                        <td>Multi-Domain Adaptability + Modular Design</td>
-                        <td>Works across malls, hospitals, farms, offices — with minimal change</td>
-                    </tr>
-                    <tr>
-                        <td>Budget constraints for system upgrades</td>
-                        <td>Seamless Integration with Existing CCTV/Drones</td>
-                        <td>Avoids expensive hardware overhauls</td>
-                    </tr>
-                    <tr>
-                        <td>Manual monitoring leads to errors and inefficiencies</td>
-                        <td>AI-Based Human Behavior & Pose Recognition</td>
-                        <td>Detects non-compliance, improves hygiene, safety, and accountability</td>
-                    </tr>
-                    <tr>
-                        <td>Difficulty proving ROI to leadership</td>
-                        <td>Real-Time Dashboard + Behavioral Insights</td>
-                        <td>Provides measurable metrics and evidence for efficiency gains</td>
-                    </tr>
-                    <tr>
-                        <td>Limited ability to optimize staff placement in real time</td>
-                        <td>Contextual Decision-Making with Autonomous Resource Allocation</td>
-                        <td>Ensures right staff are in the right place at the right time</td>
-                    </tr>
-                    <tr>
-                        <td>Fragmented systems and lack of centralized control</td>
-                        <td>Cloud-Based SaaS with Unified Dashboard + Human Override Options</td>
-                        <td>Offers central control with flexibility for manual intervention when needed</td>
-                    </tr>
-                    <tr>
-                        <td>Agriculture-specific issues like pest detection or irrigation tracking</td>
-                        <td>CCTV/Drone Integration for Crop Monitoring (Health, Pests, Ripeness)</td>
-                        <td>Saves manual effort, improves yield, reduces waste and labor costs</td>
-                    </tr>
-                    <tr>
-                        <td>Vendor solutions too generic and not industry-tuned</td>
-                        <td>Custom Behavior Recognition Models Tailored to Sector Needs</td>
-                        <td>More accurate, actionable results specific to environment</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Unique Value Propositions of Pivot Insights</h3>
-            <ul>
-                <li>
-                    <h3>1. Real-World Autonomy + Operational Task Execution</h3>
-                    <p>Unlike most agentic tools that operate in digital workspaces (like email or CRM), your system perceives physical environments, reasons in real-time, and takes direct action (e.g., reassigning a janitor or activating irrigation). This bridges the digital-to-physical gap, which is hard to do well.</p>
-                </li>
-                <li>
-                    <h3>2. Multi-Domain Adaptability with One Core Platform</h3>
-                    <p>While competitors often specialize (only agriculture, only retail), our platform applies the same agentic pipeline across: Facility management, Retail store operations, Agriculture, Smart cities. This scalability makes it flexible for enterprise-wide deployment.</p>
-                </li>
-                <li>
-                    <h3>3. Contextual Decision-Making, Not Just Detection</h3>
-                    <p>Many solutions stop at detection (e.g., "person present", "crowd forming"). You go further: “Why is the person idle? Should they be reassigned? Is a restroom due for cleaning?” That’s real Agentic reasoning, not just perception.</p>
-                </li>
-                <li>
-                    <h3>4. Autonomous Resource Allocation</h3>
-                    <p>Instead of just alerting humans, your agents reallocate idle resources, create tickets, and trigger real-world workflows. This is where you surpass traditional monitoring or analytics tools.</p>
-                </li>
-                <li>
-                    <h3>5. Built-in Human Override & Feedback Loop</h3>
-                    <p>The system allows supervisors to monitor, override, or adjust agent decisions. This "agent + human-in-loop" model increases trust and adoption.</p>
-                </li>
-                <li>
-                    <h3>6. Operational Memory & Learning Potential</h3>
-                    <p>You’re positioned to build in temporal memory (e.g., knowing which restrooms are busiest at which times, or which crops usually need water after certain weather patterns). This long-term learning and adaptability isn't common yet in agentic platforms.</p>
-                </li>
-            </ul>
-
-            <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Vision</h3>
-            <p id="vision-summary-statement" class="summary-statement">
-                “We offer a true Agentic AI platform that not only sees and understands real-world behavior but also acts autonomously to optimize operations—bridging perception, reasoning, and execution across multiple industries in a unified system.”
-            </p>
-            <canvas id="visionCanvas" width="600" height="300"></canvas>
-        </section>
-
         <section id="why-us" class="py-16 scroll-mt-16">
             <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Why Choose Agentic AI?</h2>
             <p class="text-center text-slate-600 mb-10 max-w-3xl mx-auto">This section summarizes the unique advantages of Agentic AI, addresses potential challenges, and highlights how our system empowers customers to generate new revenue. We offer a compelling, cost-effective solution for intelligent automation.</p>
@@ -588,7 +355,7 @@
         { title: "Increased Agricultural Yield & Quality", details: "For Farms & Agri-Cooperatives. Optimize interventions to increase yield, reduce crop loss, and fetch better prices.", icon: "🌿" },
         { title: "Smart Space Monetization", details: "For Coworking Spaces, Office Parks. Identify and convert idle spaces into rentable or premium offerings.", icon: "💲" },
         { title: "Premium Service Upsells", details: "For Facilities & Cleaning Companies. Justify higher contract value with performance analytics and AI-based insights.", icon: "✨" },
-        { title: "Reduced Penalties & Compliance Breaches", details: "For Hospitals, Airports, Schools. Avoid fines, improve compliance, and maintain operational continuity.", icon: "�️" },
+        { title: "Reduced Penalties & Compliance Breaches", details: "For Hospitals, Airports, Schools. Avoid fines, improve compliance, and maintain operational continuity.", icon: "🛡️" },
         { title: "Data Commercialization", details: "For Enterprise Customers. Anonymized data can be monetized or used for strategic planning.", icon: "📊" }
     ];
 
@@ -789,77 +556,7 @@
             document.querySelector('.nav-link[href="#overview"]').classList.add('active');
         }
 
-        // Canvas Specific Logic
-        window.addEventListener('load', function() { // Use load event for canvas
-            const canvas = document.getElementById('visionCanvas');
-            const ctx = canvas.getContext('2d');
 
-            // Set canvas dimensions to be responsive
-            function resizeCanvas() {
-                const containerWidth = canvas.parentElement.clientWidth;
-                canvas.width = Math.min(containerWidth, 600); // Max width 600px or container width
-                canvas.height = canvas.width * (300 / 600); // Maintain aspect ratio
-                drawCanvasContent(); // Redraw content on resize
-            }
-
-            // Draw a simple representation of "Vision" and "AI Brain"
-            function drawCanvasContent() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
-
-                // Calculate center for positioning
-                const centerX = canvas.width / 2;
-                const centerY = canvas.height / 2;
-
-                // Draw "Vision" (Eye icon)
-                ctx.beginPath();
-                ctx.arc(centerX - 80, centerY, 40, 0, Math.PI * 2, true); // Outer eye circle
-                ctx.strokeStyle = '#3498db';
-                ctx.lineWidth = 4;
-                ctx.stroke();
-
-                ctx.beginPath();
-                ctx.arc(centerX - 80, centerY, 15, 0, Math.PI * 2, true); // Pupil
-                ctx.fillStyle = '#2c3e50';
-                ctx.fill();
-
-                // Draw "AI Brain" (Simple brain-like shape or gears)
-                ctx.beginPath();
-                ctx.arc(centerX + 80, centerY - 20, 30, 0, Math.PI * 2, true);
-                ctx.arc(centerX + 60, centerY + 20, 30, 0, Math.PI * 2, true);
-                ctx.arc(centerX + 100, centerY + 20, 30, 0, Math.PI * 2, true);
-                ctx.fillStyle = '#4caf50';
-                ctx.fill();
-
-                // Draw connecting arrow/line
-                ctx.beginPath();
-                ctx.moveTo(centerX - 40, centerY);
-                ctx.lineTo(centerX + 40, centerY);
-                ctx.strokeStyle = '#e67e22';
-                ctx.lineWidth = 3;
-                ctx.stroke();
-                // Arrowhead
-                ctx.beginPath();
-                ctx.moveTo(centerX + 40, centerY);
-                ctx.lineTo(centerX + 30, centerY - 8);
-                ctx.lineTo(centerX + 30, centerY + 8);
-                ctx.closePath();
-                ctx.fillStyle = '#e67e22';
-                ctx.fill();
-
-                // Add text labels
-                ctx.font = '16px Arial';
-                ctx.fillStyle = '#333';
-                ctx.textAlign = 'center';
-                ctx.fillText('Vision', centerX - 80, centerY + 60);
-                ctx.fillText('AI Brain', centerX + 80, centerY + 60);
-            }
-
-            // Initial resize and draw
-            resizeCanvas();
-
-            // Redraw canvas content when the window is resized
-            window.addEventListener('resize', resizeCanvas);
-        });
     });
 </script>
 </body>
