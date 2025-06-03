@@ -742,13 +742,12 @@
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
-                    <span class="font-bold text-xl text-teal-600">Agentic AI</span>
+                    <span class="font-bold text-xl text-teal-200">Dont Just Record .REACT,OPTIMIZE, AND GROW</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#overview" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Overview</a>
-                        <a href="#technology" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">The Technology</a>
-                        <a href="#applications" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Applications</a>
+                        <a href="#technology" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Applications</a>
                         <a href="#business-case" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Business Case</a>
                         <a href="#why-us" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 border-b-2 border-transparent">Why Us?</a>
                     </div>
@@ -764,8 +763,7 @@
         </nav>
         <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
             <a href="#overview" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Overview</a>
-            <a href="#technology" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">The Technology</a>
-            <a href="#applications" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Applications</a>
+            <a href="#technology" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Applications</a>
             <a href="#business-case" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Business Case</a>
             <a href="#why-us" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600">Why Us?</a>
         </div>
@@ -897,15 +895,50 @@
 
             <div class="grid md:grid-cols-2 gap-8 mb-12">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                       <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Client Growth (Year 1)</h3>
-                       <div class="chart-container"><canvas id="clientGrowthChart"></canvas></div>
-                       <p class="text-center text-slate-500 mt-2 text-sm">Targeting 50 clients in the first year across different subscription tiers.</p>
+                    <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Client Growth (Year 1)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-slate-600">
+                            <thead class="bg-slate-50 text-xs text-slate-700 uppercase">
+                                <tr>
+                                    <th class="px-4 py-2">Plan</th>
+                                    <th class="px-4 py-2 text-right">Number of Clients</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientGrowthTableBody">
+                                </tbody>
+                        </table>
+                    </div>
+                    <p class="text-center text-slate-500 mt-2 text-sm">Targeting 50 clients in the first year across different subscription tiers.</p>
                 </div>
+
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Financials (Year 1)</h3>
-                    <div class="chart-container"><canvas id="financialsYear1Chart"></canvas></div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-slate-600">
+                            <thead class="bg-slate-50 text-xs text-slate-700 uppercase">
+                                <tr>
+                                    <th class="px-4 py-2">Metric</th>
+                                    <th class="px-4 py-2 text-right">Amount (INR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Total Revenue</td>
+                                    <td class="px-4 py-2 text-right">2,22,00,000</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 font-medium">Operational Costs</td>
+                                    <td class="px-4 py-2 text-right">90,00,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 font-medium">Net Profit</td>
+                                    <td class="px-4 py-2 text-right">1,32,00,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <p class="text-center text-slate-500 mt-2 text-sm">Based on client growth, projecting significant revenue and profit in the first year.</p>
-                    <p class="text-center text-2xl font-bold text-teal-600 mt-4">Year 1 ROI: ~528%</p>
+                    <p class="text-center text-2xl font-bold text-teal-600 mt-4">Year 1 ROI: ~264%</p>
                 </div>
             </div>
             
@@ -979,21 +1012,6 @@
     </footer>
 
 <script>
-/*!
- * Chart.js v4.4.1
- * https://www.chartjs.org
- * (c) 2023 Chart.js Contributors
- * Released under the MIT License
- */
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(exports):"function"==typeof define&&define.amd?define(["exports"],e):e((t="undefined"!=typeof globalThis?globalThis:t||self).Chart={})}(this,(function(t){"use strict";function e(){return"undefined"!=typeof window&&"undefined"!=typeof document}function i(t,e){const i=t.indexOf(e);if(-1===i)return e;const s=t.slice(0,i);return s.push(e),s.concat(t.slice(i+1))}function s(t){let e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"x";const i=e+"Axis";return t.filter((t=>t.options[i])).map((t=>({axis:t.options[i],r:t.getRuler(),index:t.index})))[0]}function n(t,e){return t&&Object.keys(t).length?e?l(e)?o(e).concat(t.map(o)):o(e).concat(Object.keys(t).map(o)):Object.keys(t).map(o):[]}function a(t){const e=new Set;let i=0;return e.add(t),function s(t){for(const i of t.values())if("object"==typeof i&&null!==i){e.add(i);const t=++i;if(t!==i)throw new TypeError("Recursion depth exceeded");s(e,i)}}(e,t),e}function r(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{
-    
-// ... (omitted Chart.js minified code for brevity - it's very long) ...
-
-})}));
-</script>
-
-
-<script>
     // Data from PDF
     const capabilitiesData = [
         { name: "Elevator and Corridor Surveillance", description: "Monitors activity in elevators and corridors for safety and efficiency." },
@@ -1063,6 +1081,11 @@
         { title: "Data Commercialization", details: "For Enterprise Customers. Anonymized data can be monetized or used for strategic planning.", icon: "📊" }
     ];
 
+    const clientGrowthData = [
+        { plan: "Basic Plan", clients: 30 },
+        { plan: "Enterprise Plan", clients: 15 },
+        { plan: "Custom Plan", clients: 5 }
+    ];
 
     // DOMContentLoaded
     document.addEventListener('DOMContentLoaded', () => {
@@ -1153,62 +1176,17 @@
             revenueOpportunitiesContainer.appendChild(card);
         });
 
-        // Charts
-        if (document.getElementById('clientGrowthChart')) {
-            new Chart(document.getElementById('clientGrowthChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['Basic Plan', 'Enterprise Plan', 'Custom Plan'],
-                    datasets: [{
-                        label: 'Number of Clients (Year 1)',
-                        data: [30, 15, 5],
-                        backgroundColor: ['#5EEAD4', '#2DD4BF', '#0D9488'],
-                        borderColor: ['#0D9488', '#0D9488', '#047857'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-                    scales: { x: { beginAtZero: true } },
-                    plugins: { legend: { display: false }, title: { display: false } }
-                }
-            });
-        }
-
-        if (document.getElementById('financialsYear1Chart')) {
-            new Chart(document.getElementById('financialsYear1Chart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Total Revenue (INR 2.22 Cr)', 'Operational Costs (INR 90 L)', 'Net Profit (INR 1.32 Cr)'],
-                    datasets: [{
-                        label: 'Year 1 Financials',
-                        data: [22200000, 9000000, 13200000],
-                        backgroundColor: ['#0D9488', '#FCA5A5', '#2DD4BF'],
-                        hoverOffset: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false,
-                    plugins: { 
-                        legend: { position: 'bottom' }, 
-                        title: { display: false },
-                        tooltip: {
-                             callbacks: {
-                                 label: function(context) {
-                                     let label = context.label || '';
-                                     if (label) {
-                                         label += ': ';
-                                     }
-                                     if (context.parsed !== null) {
-                                         label += new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumSignificantDigits: 3 }).format(context.parsed);
-                                     }
-                                     return label;
-                                 }
-                             }
-                        }
-                    }
-                }
-            });
-        }
+        // Populate Projected Client Growth Table
+        const clientGrowthTableBody = document.getElementById('clientGrowthTableBody');
+        clientGrowthData.forEach(item => {
+            const tr = document.createElement('tr');
+            tr.className = 'border-b';
+            tr.innerHTML = `
+                <td class="px-4 py-2 font-medium">${item.plan}</td>
+                <td class="px-4 py-2 text-right">${item.clients}</td>
+            `;
+            clientGrowthTableBody.appendChild(tr);
+        });
 
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
