@@ -58,12 +58,16 @@
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <section id="hero" class="text-center py-12 md:py-20 bg-gradient-to-br from-teal-50 to-sky-50 rounded-xl shadow-lg">
-                <h4 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-teal-700 mb-6">
+        <h2>Vison</h2>
+        <p class="summary-statement">
+            “We offer a true Agentic AI platform that not only sees and understands real-world behavior but also acts autonomously to optimize operations—bridging perception, reasoning, and execution across multiple industries in a unified system.”
+        </p>  
+            <h4 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-teal-700 mb-6">
                 What if your cameras could truly think? <br class="hidden sm:inline"/>
             </h4>
              <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
                 Turn Camera Feeds Into Smart Workforce Decisions <br class="hidden sm:inline"/>
-            </p>
+           </p>
             <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
                 Leveraging existing CCTV and drone infrastructure, our Agentic AI system transforms passive surveillance into actionable insights for operational excellence and revenue generation.
             </p>
@@ -97,7 +101,7 @@
                     <div class="flow-arrow hidden md:block">&rarr;</div> <div class="flow-arrow md:hidden">&darr;</div>
                     <div class="flow-step">Task Allocation & Real-Time Alerts</div>
                 </div>
-                   <p class="text-center text-slate-500 mt-6 text-sm">This simplified flow illustrates the core process from data input to actionable output, enabling smarter workforce and facility management.</p>
+                 <p class="text-center text-slate-500 mt-6 text-sm">This simplified flow illustrates the core process from data input to actionable output, enabling smarter workforce and facility management.</p>
             </div>
         </section>
 
@@ -164,7 +168,7 @@
                         </tbody>
                     </table>
                 </div>
-                   <div class="bg-white p-6 rounded-lg shadow-lg">
+                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-semibold text-teal-700 mb-4">Funding Requirements for MVP</h3>
                     <ul class="space-y-2 text-slate-600">
                         <li>Prototype to MVP Development: <span class="font-semibold text-teal-600">INR 15 Lakhs</span></li>
@@ -178,9 +182,9 @@
 
             <div class="grid md:grid-cols-2 gap-8 mb-12">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
-                       <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Client Growth (Year 1)</h3>
-                       <div class="chart-container"><canvas id="clientGrowthChart"></canvas></div>
-                       <p class="text-center text-slate-500 mt-2 text-sm">Targeting 50 clients in the first year across different subscription tiers.</p>
+                     <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Client Growth (Year 1)</h3>
+                     <div class="chart-container"><canvas id="clientGrowthChart"></canvas></div>
+                     <p class="text-center text-slate-500 mt-2 text-sm">Targeting 50 clients in the first year across different subscription tiers.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Projected Financials (Year 1)</h3>
@@ -191,7 +195,7 @@
             </div>
             
             <div class="bg-white p-6 rounded-lg shadow-lg mb-12">
-                   <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Proposed Team Structure (15-18 People)</h3>
+                 <h3 class="text-2xl font-semibold text-teal-700 mb-4 text-center">Proposed Team Structure (15-18 People)</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center" id="teamStructureContainer">
                 </div>
             </div>
@@ -299,6 +303,7 @@
     ];
 
     const prosData = [
+"Dont Just Record. React Optimize,Grow",
         "Seamless Integration with Existing CCTV", "Real-Time Task Optimization", "Cloud-Based SaaS Model", 
         "Cross-Sector Applicability", "Cost-Effective Pricing", "Behavioral Insights for Smarter Decision-Making"
     ];
@@ -335,7 +340,7 @@
             const div = document.createElement('div');
             div.className = 'bg-white p-4 rounded-lg shadow clickable-card cursor-pointer';
             div.innerHTML = `<h5 class="font-semibold text-md text-teal-700 mb-1">${cap.name}</h5>
-                                 <p class="text-sm text-slate-500 collapsible-content">${cap.description}</p>`;
+                             <p class="text-sm text-slate-500 collapsible-content">${cap.description}</p>`;
             div.addEventListener('click', () => {
                 div.querySelector('.collapsible-content').classList.toggle('open');
             });
@@ -411,7 +416,7 @@
                 </div>
                 <p class="text-sm text-slate-500 collapsible-content">${opp.details}</p>
             `;
-               card.addEventListener('click', () => {
+             card.addEventListener('click', () => {
                 card.querySelector('.collapsible-content').classList.toggle('open');
             });
             revenueOpportunitiesContainer.appendChild(card);
@@ -457,17 +462,17 @@
                         title: { display: false },
                         tooltip: {
                              callbacks: {
-                                 label: function(context) {
-                                     let label = context.label || '';
-                                     if (label) {
-                                         label += ': ';
-                                     }
-                                     if (context.parsed !== null) {
-                                         label += new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumSignificantDigits: 3 }).format(context.parsed);
-                                     }
-                                     return label;
-                                 }
-                             }
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumSignificantDigits: 3 }).format(context.parsed);
+                                    }
+                                    return label;
+                                }
+                            }
                         }
                     }
                 }
@@ -498,21 +503,12 @@
         const sections = document.querySelectorAll('section[id]');
         window.addEventListener('scroll', () => {
             let current = '';
-            const headerOffset = document.querySelector('header').offsetHeight;
-            
-            // Check if at the very top of the page, or within the hero section, activate 'Overview'
-            const heroSection = document.getElementById('hero');
-            if (window.scrollY < heroSection.offsetTop + heroSection.offsetHeight / 2) { 
-                current = 'overview';
-            } else {
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    // Adjusted scroll position check for better activation as a section comes into view
-                    if (window.scrollY >= sectionTop - headerOffset - 50) { // Added a buffer of 50px
-                        current = section.getAttribute('id');
-                    }
-                });
-            }
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - (document.querySelector('header').offsetHeight + 20)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -520,15 +516,20 @@
                     link.classList.add('active');
                 }
             });
+             if (!current && window.pageYOffset < sections[0].offsetTop) { // If above first section, highlight overview
+                navLinks.forEach(l => l.classList.remove('active'));
+                document.querySelector('.nav-link[href="#overview"]').classList.add('active');
+            }
         });
-        
-        // Set initial active link on page load based on hash or default to overview
-        if (window.location.hash) {
+        // Set initial active link
+         if (window.location.hash) {
             const initialLink = document.querySelector(`.nav-link[href="${window.location.hash}"]`);
             if (initialLink) initialLink.classList.add('active');
         } else {
             document.querySelector('.nav-link[href="#overview"]').classList.add('active');
         }
+
+
     });
 </script>
 </body>
