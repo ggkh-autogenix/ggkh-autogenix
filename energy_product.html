@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Robo6 Investor Pitch</title>
+  <title>Investor Pitch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
@@ -16,109 +16,117 @@
     }
     .container {
       display: grid;
+      grid-template-rows: auto auto 1fr auto;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto 1fr auto;
-      gap: 14px;
+      gap: 8px;
       height: 100vh;
-      padding: 20px;
+      padding: 12px;
       box-sizing: border-box;
     }
     header {
       grid-column: 1 / 4;
       text-align: center;
-      margin-bottom: 5px;
     }
-    header img {
-      max-height: 150px;
+    .poster {
+      grid-column: 2 / 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .poster img {
+      max-height: 120px;
       width: auto;
       border-radius: 8px;
-      margin-bottom: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .block {
-      padding: 12px 16px;
+      padding: 10px 12px;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      font-size: 0.85rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-size: 0.8rem;
     }
     h2 {
-      margin-top: 0;
+      margin: 0 0 6px 0;
       color: #0a3d62;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     ul {
-      padding-left: 18px;
-      margin: 8px 0 0 0;
-      line-height: 1.4;
+      padding-left: 16px;
+      margin: 0;
+      line-height: 1.35;
+    }
+    .headline {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 4px 0;
+    }
+    .subtext {
+      font-size: 0.85rem;
+      color: #444;
     }
     footer {
       grid-column: 1 / 4;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #666;
-      margin-top: 6px;
-    }
-    .headline {
-      font-size: 1.4rem;
-      margin: 6px 0 4px 0;
-    }
-    .subtext {
-      font-size: 0.9rem;
-      color: #444;
+      padding-top: 4px;
     }
   </style>
 </head>
 <body>
   <div class="container">
 
+    <!-- Header -->
     <header>
-      <img src="robo6-poster.jpg" alt="Robo6 Energy Poster">
-      <div class="headline">Robo6: Smart Home Energy Monitoring System</div>
+      <div class="headline">Smart Home Energy Monitoring System</div>
       <div class="subtext"><strong>Problem:</strong> No visibility into energy usage in apartments due to poor data from existing meters (e.g., ELMeasure).</div>
     </header>
 
-    <!-- Slide 1 -->
+    <!-- Center Image -->
+    <div class="poster">
+      <img src="robo6-poster.jpg" alt="Robo6 Energy Poster">
+    </div>
+
+    <!-- Left Block -->
     <div class="block">
       <h2>Vision & Breakthrough</h2>
       <ul>
-        <li>Real-time energy monitoring device + mobile dashboard</li>
-        <li>Breakthrough: Plug-and-play, cost-effective & scalable</li>
-        <li>Empowers users to reduce waste and optimize usage</li>
-        <li>Vision: 1M homes with energy visibility</li>
+        <li>Real-time monitoring with mobile dashboard</li>
+        <li>Breakthrough: Plug-and-play & scalable</li>
+        <li>Empowers households to optimize energy</li>
+        <li>Vision: 1M energy-aware homes</li>
       </ul>
     </div>
 
-    <!-- Slide 2 -->
+    <!-- Center Block -->
     <div class="block">
-      <h2>Market, ROI & Investment</h2>
+      <h2>Market & ROI</h2>
       <ul>
-        <li>India: 30M+ urban households</li>
-        <li>Unit cost: ₹2K–₹2.5K (bulk); Sell at ₹3.5K–₹5K</li>
-        <li>Est. 50K+ units/year with resales</li>
-        <li>High ROI potential: 2X–3X margin on volume</li>
-        <li>₹3 Cr required for R&D, certification, GTM</li>
+        <li>30M+ urban households in India</li>
+        <li>Cost: ₹2K–₹2.5K → Sell: ₹3.5K–₹5K</li>
+        <li>50K units/year potential incl. resales</li>
+        <li>High ROI: 2X–3X margin on scale</li>
+        <li>₹3 Cr for R&D + certification</li>
       </ul>
     </div>
 
-    <!-- Slide 3 -->
+    <!-- Right Block -->
     <div class="block">
-      <h2>Time to Market & Ask</h2>
+      <h2>Time & Ask</h2>
       <ul>
-        <li>Ready to market within 12 months</li>
-        <li>Certification partnerships identified</li>
-        <li>Demo rollouts via RWAs and builders</li>
-        <li>Ask: ₹3 Cr + Advisory Support</li>
+        <li>Market-ready within 12 months</li>
+        <li>Demo via RWAs, builder channels</li>
+        <li>Ask: ₹3 Cr + advisory support</li>
         
       </ul>
     </div>
 
+    <!-- Footer -->
     <footer>
-      &copy; 2025 Robo6 | Designed for early-stage investors | Hyderabad, India
-      📩 contact@robo6.in | 📞 +91-9292601330
+      &copy; 2025 Robo6 | Built for early investors | Hyderabad, India
+      <li>📩 contact@robo6.in</li>
+      <li>📞 +91-9292601330</li>
     </footer>
   </div>
 </body>
