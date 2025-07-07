@@ -18,7 +18,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: auto 1fr auto;
-      gap: 10px;
+      gap: 14px;
       height: 100vh;
       padding: 20px;
       box-sizing: border-box;
@@ -26,19 +26,24 @@
     header {
       grid-column: 1 / 4;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
     header img {
-      max-height: 120px;
+      max-height: 150px;
       width: auto;
-      border-radius: 6px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     .block {
-      padding: 10px 15px;
+      padding: 12px 16px;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
       font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     h2 {
       margin-top: 0;
@@ -48,13 +53,22 @@
     ul {
       padding-left: 18px;
       margin: 8px 0 0 0;
+      line-height: 1.4;
     }
     footer {
       grid-column: 1 / 4;
       text-align: center;
       font-size: 0.8rem;
       color: #666;
-      margin-top: 10px;
+      margin-top: 6px;
+    }
+    .headline {
+      font-size: 1.4rem;
+      margin: 6px 0 4px 0;
+    }
+    .subtext {
+      font-size: 0.9rem;
+      color: #444;
     }
   </style>
 </head>
@@ -63,45 +77,48 @@
 
     <header>
       <img src="robo6-poster.jpg" alt="Robo6 Energy Poster">
-      <h1 style="font-size:1.3rem; margin-top: 5px;">Robo6: Smart Home Energy Monitoring System</h1>
-      <p style="margin: 5px 0; font-size: 0.9rem;"><strong>Problem:</strong> No visibility into energy usage in apartments due to poor data from existing meters (e.g., ELMeasure).</p>
+      <div class="headline">Robo6: Smart Home Energy Monitoring System</div>
+      <div class="subtext"><strong>Problem:</strong> No visibility into energy usage in apartments due to poor data from existing meters (e.g., ELMeasure).</div>
     </header>
 
     <!-- Slide 1 -->
     <div class="block">
-      <h2>Vision & Solution</h2>
+      <h2>Vision & Breakthrough</h2>
       <ul>
         <li>Real-time energy monitoring device + mobile dashboard</li>
+        <li>Breakthrough: Plug-and-play, cost-effective & scalable</li>
         <li>Empowers users to reduce waste and optimize usage</li>
-        <li>Green, scalable, plug-and-play tech</li>
         <li>Vision: 1M homes with energy visibility</li>
       </ul>
     </div>
 
     <!-- Slide 2 -->
     <div class="block">
-      <h2>Market & Investment</h2>
+      <h2>Market, ROI & Investment</h2>
       <ul>
         <li>India: 30M+ urban households</li>
         <li>Unit cost: ₹2K–₹2.5K (bulk); Sell at ₹3.5K–₹5K</li>
-        <li>50K+ units/year potential incl. resales</li>
-        <li>₹3 Cr investment for R&D + certification</li>
+        <li>Est. 50K+ units/year with resales</li>
+        <li>High ROI potential: 2X–3X margin on volume</li>
+        <li>₹3 Cr required for R&D, certification, GTM</li>
       </ul>
     </div>
 
     <!-- Slide 3 -->
     <div class="block">
-      <h2>Risk & Ask</h2>
+      <h2>Time to Market & Ask</h2>
       <ul>
-        <li>Education → RWAs + demo pilots</li>
-        <li>Certification → Trusted labs</li>
+        <li>Ready to market within 12 months</li>
+        <li>Certification partnerships identified</li>
+        <li>Demo rollouts via RWAs and builders</li>
         <li>Ask: ₹3 Cr + Advisory Support</li>
-        <li>📩 contact@robo6.in | 📞 +91-9292601330</li>
+        
       </ul>
     </div>
 
     <footer>
-      &copy; 2025 Robo6 Energy Systems | Designed for investors
+      &copy; 2025 Robo6 | Designed for early-stage investors | Hyderabad, India
+      📩 contact@robo6.in | 📞 +91-9292601330
     </footer>
   </div>
 </body>
