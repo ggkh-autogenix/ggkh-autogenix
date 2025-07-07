@@ -5,88 +5,104 @@
   <title>Robo6 Investor Pitch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #333; }
-    .slide { padding: 60px 20px; max-width: 900px; margin: auto; border-bottom: 1px solid #ddd; }
-    h1, h2 { color: #0a3d62; }
-    h1 { font-size: 2.2em; margin-bottom: 0.2em; }
-    h2 { font-size: 1.5em; margin-top: 1em; }
-    ul { padding-left: 20px; }
-    .columns { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 20px; }
-    .column { flex: 1; min-width: 280px; }
-    img.poster { width: 100%; max-width: 900px; display: block; margin: 40px auto; border-radius: 8px; }
-    footer { text-align: center; padding: 30px; font-size: 0.9em; color: #888; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      overflow: hidden;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    header {
+      grid-column: 1 / 4;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    header img {
+      max-height: 120px;
+      width: auto;
+      border-radius: 6px;
+    }
+    .block {
+      padding: 10px 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      font-size: 0.85rem;
+    }
+    h2 {
+      margin-top: 0;
+      color: #0a3d62;
+      font-size: 1.1rem;
+    }
+    ul {
+      padding-left: 18px;
+      margin: 8px 0 0 0;
+    }
+    footer {
+      grid-column: 1 / 4;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <!-- Poster image -->
-  <img src="robo6-poster.jpg" alt="Robo6 Energy Monitoring Poster" class="poster">
+    <header>
+      <img src="robo6-poster.jpg" alt="Robo6 Energy Poster">
+      <h1 style="font-size:1.3rem; margin-top: 5px;">Robo6: Smart Home Energy Monitoring System</h1>
+      <p style="margin: 5px 0; font-size: 0.9rem;"><strong>Problem:</strong> No visibility into energy usage in apartments due to poor data from existing meters (e.g., ELMeasure).</p>
+    </header>
 
-  <!-- Slide 1 -->
-  <section class="slide">
-    <h1>Robo6: Powering Smarter Homes with Energy Intelligence</h1>
-    <ul>
-      <li><strong>Problem:</strong> No visibility into energy use from current meters (e.g., ELMeasure).</li>
-      <li><strong>Solution:</strong> Plug-and-play Home Energy Monitoring System with mobile dashboard.</li>
-      <li><strong>Why Now:</strong> Rising energy prices, smart infra demand, and affordable IoT hardware.</li>
-      <li><strong>Vision:</strong> Empower 1M homes with real-time energy insights.</li>
-    </ul>
-  </section>
-
-  <!-- Slide 2 -->
-  <section class="slide">
-    <h1>Market, Model & Investment</h1>
-    <div class="columns">
-      <div class="column">
-        <h2>Market & Model</h2>
-        <ul>
-          <li>30M+ urban households in India</li>
-          <li>5K+ unit production cost: ₹2K–₹2.5K</li>
-          <li>Selling price: ₹3.5K–₹5K (case-based)</li>
-          <li>Est. sales: 50K units/year (resales included)</li>
-          <li>Model: Device + Optional SaaS analytics</li>
-        </ul>
-      </div>
-      <div class="column">
-        <h2>Investment & Ask</h2>
-        <ul>
-          <li>₹3 Cr required (R&D + certification)</li>
-          <li>Break-even in 12–18 months</li>
-          <li>Seeking strategic investors/advisors</li>
-          <li>Early traction from RWAs and builders</li>
-        </ul>
-      </div>
+    <!-- Slide 1 -->
+    <div class="block">
+      <h2>Vision & Solution</h2>
+      <ul>
+        <li>Real-time energy monitoring device + mobile dashboard</li>
+        <li>Empowers users to reduce waste and optimize usage</li>
+        <li>Green, scalable, plug-and-play tech</li>
+        <li>Vision: 1M homes with energy visibility</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- Slide 3 -->
-  <section class="slide">
-    <h1>Why This, Why Now – Join the Revolution</h1>
-    <div class="columns">
-      <div class="column">
-        <h2>Risks & Mitigations</h2>
-        <ul>
-          <li>Market education → RWA & demo pilots</li>
-          <li>Certification → Partner with trusted labs</li>
-          <li>Price sensitivity → Tiered plans</li>
-          <li>Competition → First-mover + IP edge</li>
-        </ul>
-      </div>
-      <div class="column">
-        <h2>Our Ask</h2>
-        <ul>
-          <li>₹3 Cr for R&D & GTM</li>
-          <li>Advisory support in IoT, power, compliance</li>
-          <li>Join us to power 50K+ homes every year!</li>
-          <li>📩 contact@robo6.in | 📞 +91-9292601330</li>
-        </ul>
-      </div>
+    <!-- Slide 2 -->
+    <div class="block">
+      <h2>Market & Investment</h2>
+      <ul>
+        <li>India: 30M+ urban households</li>
+        <li>Unit cost: ₹2K–₹2.5K (bulk); Sell at ₹3.5K–₹5K</li>
+        <li>50K+ units/year potential incl. resales</li>
+        <li>₹3 Cr investment for R&D + certification</li>
+      </ul>
     </div>
-  </section>
 
-  <footer>
-    &copy; 2025 Robo6 Energy Systems. All rights reserved.
-  </footer>
+    <!-- Slide 3 -->
+    <div class="block">
+      <h2>Risk & Ask</h2>
+      <ul>
+        <li>Education → RWAs + demo pilots</li>
+        <li>Certification → Trusted labs</li>
+        <li>Ask: ₹3 Cr + Advisory Support</li>
+        <li>📩 contact@robo6.in | 📞 +91-9292601330</li>
+      </ul>
+    </div>
 
+    <footer>
+      &copy; 2025 Robo6 Energy Systems | Designed for investors
+    </footer>
+  </div>
 </body>
 </html>
