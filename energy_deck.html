@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan3 Investor Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .competitor-point {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .competitor-point:hover {
+            transform: scale(1.2);
+        }
+        
+        .yan3-point {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7);
+            }
+            
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
+            }
+            
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
+            }
+        }
+        
+        .feature-row:hover {
+            background-color: rgba(14, 165, 233, 0.05);
+        }
+        
+        .highlight-cell {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-cell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(14, 165, 233, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-row:hover .highlight-cell::before {
+            transform: translateX(0);
+        }
+        
+        .advantage-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .advantage-card:hover {
+            border-left-color: #0ea5e9;
+            background-color: rgba(14, 165, 233, 0.05);
+        }
+        
+        .timeline-point {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-point:hover {
+            transform: scale(1.1);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+            border-radius: 4px;
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            background-color: #0ea5e9;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="gradient-bg text-white py-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Yan3 Investor Pitch Deck</h1>
+                <p class="text-blue-100 text-xl">Smart Energy Monitoring for Indian Homes</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <!-- Tab Navigation -->
+            <div class="mb-8 flex flex-wrap gap-2">
+                <button class="tab-button active px-4 py-2 rounded-lg font-medium text-sm" data-tab="competitor-map">Competitor Map</button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm" data-tab="feature-comparison">Feature Comparison</button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm" data-tab="yan3-advantages">Yan3 Advantages</button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm" data-tab="india-strategy">India-Focused Strategy</button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm" data-tab="roi-analysis">ROI Analysis</button>
+                <button class="tab-button px-4 py-2 rounded-lg font-medium text-sm" data-tab="certification-roadmap">Certification Roadmap</button>
+            </div>
+
+            <!-- Competitor Map Section -->
+            <section id="competitor-map" class="tab-content active mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                    Competitor Map – Price vs Intelligence
+                </h2>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 card">
+                    <div class="relative h-96 border-b border-l border-gray-300">
+                        <!-- Axes Labels -->
+                        <div class="absolute -left-12 top-1/2 -translate-y-1/2 -rotate-90 font-medium text-gray-700">
+                            Price (Low → High)
+                        </div>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-8 font-medium text-gray-700">
+                            Intelligence (Low → High)
+                        </div>
+                        
+                        <!-- Quadrant Labels -->
+                        <div class="absolute top-4 left-4 text-sm text-gray-500">High Price, Low Intelligence</div>
+                        <div class="absolute top-4 right-4 text-sm text-gray-500">High Price, High Intelligence</div>
+                        <div class="absolute bottom-4 left-4 text-sm text-gray-500">Low Price, Low Intelligence</div>
+                        <div class="absolute bottom-4 right-4 text-sm text-gray-500">Low Price, High Intelligence</div>
+                        
+                        <!-- Competitor Points -->
+                        <!-- Fluentgrid, SATEC (Top Right) -->
+                        <div class="competitor-point absolute top-[20%] right-[20%] h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center shadow-md" data-competitor="Fluentgrid">
+                            <span class="text-xs font-medium">F</span>
+                        </div>
+                        <div class="competitor-point absolute top-[15%] right-[30%] h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center shadow-md" data-competitor="SATEC">
+                            <span class="text-xs font-medium">S</span>
+                        </div>
+                        
+                        <!-- DIN-Rail Smart Meters (Bottom Left) -->
+                        <div class="competitor-point absolute bottom-[30%] left-[25%] h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center shadow-md" data-competitor="DIN-Rail">
+                            <span class="text-xs font-medium">D</span>
+                        </div>
+                        
+                        <!-- Emporia Vue, Iskraemeco (Top Left) -->
+                        <div class="competitor-point absolute top-[30%] left-[20%] h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center shadow-md" data-competitor="Emporia">
+                            <span class="text-xs font-medium">E</span>
+                        </div>
+                        <div class="competitor-point absolute top-[25%] left-[30%] h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center shadow-md" data-competitor="Iskraemeco">
+                            <span class="text-xs font-medium">I</span>
+                        </div>
+                        
+                        <!-- Yan3 (Bottom Right) -->
+                        <div class="competitor-point yan3-point absolute bottom-[20%] right-[25%] h-10 w-10 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg" data-competitor="Yan3">
+                            <span class="text-xs font-medium">Yan3</span>
+                        </div>
+                    </div>
+                    
+                    <div id="competitor-info" class="mt-6 p-4 bg-blue-50 rounded-lg hidden">
+                        <h3 id="competitor-name" class="font-medium text-gray-800 mb-2"></h3>
+                        <p id="competitor-description" class="text-sm text-gray-700"></p>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="font-medium text-gray-800 mb-2">Key Insights:</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <span>Yan3 uniquely combines high intelligence with affordability</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <span>Competitors are either expensive with high intelligence or affordable with low intelligence</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <span>Yan3's position creates a disruptive market opportunity</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Comparison Section -->
+            <section id="feature-comparison" class="tab-content mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    Feature Comparison Table
+                </h2>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="bg-gray-50 border-b">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Feature</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Emporia Vue</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">DIN-Rail Meters</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Iskraemeco MT260</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Fluentgrid/SATEC</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700 bg-blue-50">Yan3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Plug & Play</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Semi</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ No</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ No</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ N/A</td>
+                                    <td class="py-3 px-4 text-sm text-green-600 font-medium highlight-cell bg-blue-50">✅ Yes</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Appliance-Level Insights</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Extra kit</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ No</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ No</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ No</td>
+                                    <td class="py-3 px-4 text-sm text-green-600 font-medium highlight-cell bg-blue-50">✅ Built-in</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">India Certification (BIS)</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Imported</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">✅ Some</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">✅ Yes</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">✅ Yes</td>
+                                    <td class="py-3 px-4 text-sm text-blue-600 font-medium highlight-cell bg-blue-50">✅ In Progress</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Consumer Dashboard</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Basic</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Weak/None</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Absent</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ No</td>
+                                    <td class="py-3 px-4 text-sm text-green-600 font-medium highlight-cell bg-blue-50">✅ AI + Mobile App</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Support & Warranty</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Importer</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ Gray market</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">✅ Utility</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">❌ N/A</td>
+                                    <td class="py-3 px-4 text-sm text-green-600 font-medium highlight-cell bg-blue-50">✅ Indian Service</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Price (INR)</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹21k–30k</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹26k–27k</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Utility-level</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">High-cost infra</td>
+                                    <td class="py-3 px-4 text-sm text-green-600 font-medium highlight-cell bg-blue-50">₹4.5k target</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="p-4 bg-blue-50">
+                        <h3 class="font-medium text-gray-800 mb-2">Key Differentiators:</h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Yan3 is the only solution offering true plug & play installation for Indian homes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Built-in appliance-level insights without additional hardware</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>5-6x price advantage over closest competitors</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yan3 Advantages Section -->
+            <section id="yan3-advantages" class="tab-content mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Yan3 Advantage Highlights
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- AI-Powered Insights -->
+                    <div class="bg-white rounded-xl shadow-md p-6 advantage-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">AI-Powered Insights</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">Real-time detection of energy wastage, with appliance-level granularity. Identifies patterns and provides actionable recommendations.</p>
+                        <div class="mt-4 flex items-center text-sm text-blue-600">
+                            <span class="font-medium">Key Benefit:</span>
+                            <span class="ml-2">15% average energy savings</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Smart Dashboard -->
+                    <div class="bg-white rounded-xl shadow-md p-6 advantage-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Smart Dashboard</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">Mobile-first interface supporting Hindi and English. Intuitive visualizations and alerts make energy management accessible to all users.</p>
+                        <div class="mt-4 flex items-center text-sm text-blue-600">
+                            <span class="font-medium">Key Benefit:</span>
+                            <span class="ml-2">Multilingual, user-friendly interface</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Plug & Play -->
+                    <div class="bg-white rounded-xl shadow-md p-6 advantage-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Plug & Play</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">Designed specifically for Indian homes – no electrician needed. Simple installation process takes minutes, not hours.</p>
+                        <div class="mt-4 flex items-center text-sm text-blue-600">
+                            <span class="font-medium">Key Benefit:</span>
+                            <span class="ml-2">Zero installation complexity</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Made in India -->
+                    <div class="bg-white rounded-xl shadow-md p-6 advantage-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Made in India</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">Local R&D, field-tested, and supported. Designed specifically for Indian power conditions and home wiring configurations.</p>
+                        <div class="mt-4 flex items-center text-sm text-blue-600">
+                            <span class="font-medium">Key Benefit:</span>
+                            <span class="ml-2">Local support & compatibility</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Cost Disruptor -->
+                    <div class="bg-white rounded-xl shadow-md p-6 advantage-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Cost Disruptor</h3>
+                        </div>
+                        <p class="text-sm text-gray-700">5–6x cheaper than market leaders. Aggressive pricing strategy enables mass market adoption across Indian households.</p>
+                        <div class="mt-4 flex items-center text-sm text-blue-600">
+                            <span class="font-medium">Key Benefit:</span>
+                            <span class="ml-2">Affordable for average households</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Demo -->
+                    <div class="bg-white rounded-xl shadow-md p-6 advantage-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Product Demo</h3>
+                        </div>
+                        <div class="aspect-w-16 aspect-h-9 mt-2 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <div class="text-center p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <p class="text-sm text-gray-500">Product demo available upon request</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- India-Focused Strategy Section -->
+            <section id="india-strategy" class="tab-content mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                    </svg>
+                    India-Focused Strategy
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Certifications -->
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Certifications</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>BIS (Bureau of Indian Standards)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>WPC-ETA (Wireless Planning & Coordination)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>EMI/EMC Compliance</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>CE (optional for export markets)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Support -->
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Support</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Indian service centers</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Multilingual support (Hindi, English)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>WhatsApp support channel</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>1-year standard warranty</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Design -->
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Design</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Indian grid conditions (voltage fluctuations)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Apartment wiring compatibility</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Heat and humidity resistant</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Dust and power surge protection</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Pricing</h3>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-700">Yan3 Target Price:</span>
+                            <span class="text-lg font-semibold text-green-600">₹4,500/unit</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-700">Competitor Average:</span>
+                            <span class="text-lg font-semibold text-red-600">₹25,000+/unit</span>
+                        </div>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-1">
+                                <span>Price Advantage</span>
+                                <span>5-6x cheaper</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ROI Analysis Section -->
+            <section id="roi-analysis" class="tab-content mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    ROI Analysis
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Consumer ROI -->
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Consumer ROI</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-700">Average Annual Electricity Bill:</span>
+                                <span class="font-semibold text-gray-800">₹12,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-700">Average Savings via Yan3:</span>
+                                <span class="font-semibold text-green-600">15% = ₹1,800/year</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-700">Yan3 Cost:</span>
+                                <span class="font-semibold text-gray-800">₹4,500</span>
+                            </div>
+                            <div class="border-t border-gray-200 pt-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-medium text-gray-700">Payback Period:</span>
+                                    <span class="font-semibold text-green-600">< 3 months</span>
+                                </div>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-sm font-medium text-gray-700">Year 1 ROI:</span>
+                                    <span class="font-semibold text-green-600">4x</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Payback Timeline:</h4>
+                            <div class="relative pt-1">
+                                <div class="flex mb-2 items-center justify-between">
+                                    <div>
+                                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200">
+                                            Payback Progress
+                                        </span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-xs font-semibold inline-block text-blue-600">
+                                            100%
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+                                    <div style="width: 100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-500">
+                                    <span>Purchase</span>
+                                    <span>Month 1</span>
+                                    <span>Month 2</span>
+                                    <span class="font-medium text-blue-600">Month 3</span>
+                                    <span>Month 4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Investor ROI -->
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Investor ROI</h3>
+                        <div class="mb-6">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Unit Economics (at scale):</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">BOM:</span>
+                                    <span class="font-semibold text-gray-800">₹1,200</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Certification & Manufacturing:</span>
+                                    <span class="font-semibold text-gray-800">₹500</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Logistics & Support:</span>
+                                    <span class="font-semibold text-gray-800">₹300</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Total Cost:</span>
+                                    <span class="font-semibold text-gray-800">₹2,000</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Retail Price:</span>
+                                    <span class="font-semibold text-green-600">₹4,500</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-2 border-t border-gray-200">
+                                    <span class="text-sm font-medium text-gray-700">Margin per Unit:</span>
+                                    <span class="font-semibold text-green-600">₹2,500+ (55%+)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Scale Potential:</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">India Households:</span>
+                                    <span class="font-semibold text-gray-800">280M</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Target Market Penetration:</span>
+                                    <span class="font-semibold text-gray-800">1%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Potential Units:</span>
+                                    <span class="font-semibold text-gray-800">2.8M</span>
+                                </div>
+                                <div class="flex justify-between items-center pt-2 border-t border-gray-200">
+                                    <span class="text-sm font-medium text-gray-700">Total Market Size:</span>
+                                    <span class="font-semibold text-green-600">₹1,200+ Cr</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ROI Chart -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-6 card">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4">5-Year Projection</h3>
+                    <div class="h-64 relative">
+                        <canvas id="roiChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certification Roadmap Section -->
+            <section id="certification-roadmap" class="tab-content mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                    Compliance Strategy – Budget & Timeline
+                </h2>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="bg-gray-50 border-b">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Certification</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Cost Estimate</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Timeline</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">BIS (IS 13779 / IS 16444)</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹2L</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">4–8 weeks</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Resubmission may cost ₹30–50K</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">WPC ETA (Wi-Fi/ZigBee)</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹25K</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">2–3 weeks</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Use pre-certified modules to save time</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">EMI/EMC</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹1L</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">2–4 weeks</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Ensure zero interference, BIS linked</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">RoHS (Optional)</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹40K</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">1–2 weeks</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Eco-compliance for exports</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">CE (Optional)</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹2L</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">4–6 weeks</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">For prestige & global expansion</td>
+                                </tr>
+                                <tr class="feature-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Sample Prep + Testing Units</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹25K/unit</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Ongoing</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Must be near-production grade</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="bg-gray-50">
+                                    <td class="py-3 px-4 text-sm font-medium text-gray-800">Total Budget</td>
+                                    <td class="py-3 px-4 text-sm font-medium text-blue-600" colspan="3">₹3–4.5 Lakhs</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Timeline Visualization -->
+                <div class="mt-6 bg-white rounded-xl shadow-md p-6 card">
+                    <h3 class="text-lg font-medium text-gray-800 mb-4">Certification Timeline</h3>
+                    <div class="relative">
+                        <!-- Timeline Line -->
+                        <div class="absolute h-1 w-full bg-gray-200 top-5"></div>
+                        
+                        <!-- Timeline Points -->
+                        <div class="relative flex justify-between">
+                            <!-- Start -->
+                            <div class="timeline-point relative">
+                                <div class="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center z-10 relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-12 -left-10 w-20 text-center">
+                                    <span class="text-xs font-medium text-gray-700">Start</span>
+                                </div>
+                            </div>
+                            
+                            <!-- WPC ETA -->
+                            <div class="timeline-point relative">
+                                <div class="h-10 w-10 rounded-full bg-blue-400 flex items-center justify-center z-10 relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-12 -left-10 w-20 text-center">
+                                    <span class="text-xs font-medium text-gray-700">WPC ETA</span>
+                                    <span class="text-xs text-gray-500 block">3 weeks</span>
+                                </div>
+                            </div>
+                            
+                            <!-- EMI/EMC -->
+                            <div class="timeline-point relative">
+                                <div class="h-10 w-10 rounded-full bg-blue-400 flex items-center justify-center z-10 relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-12 -left-10 w-20 text-center">
+                                    <span class="text-xs font-medium text-gray-700">EMI/EMC</span>
+                                    <span class="text-xs text-gray-500 block">4 weeks</span>
+                                </div>
+                            </div>
+                            
+                            <!-- BIS -->
+                            <div class="timeline-point relative">
+                                <div class="h-10 w-10 rounded-full bg-blue-400 flex items-center justify-center z-10 relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-12 -left-10 w-20 text-center">
+                                    <span class="text-xs font-medium text-gray-700">BIS</span>
+                                    <span class="text-xs text-gray-500 block">8 weeks</span>
+                                </div>
+                            </div>
+                            
+                            <!-- CE (Optional) -->
+                            <div class="timeline-point relative">
+                                <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center z-10 relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-12 -left-10 w-20 text-center">
+                                    <span class="text-xs font-medium text-gray-700">CE</span>
+                                    <span class="text-xs text-gray-500 block">Optional</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Complete -->
+                            <div class="timeline-point relative">
+                                <div class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center z-10 relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <div class="absolute top-12 -left-10 w-20 text-center">
+                                    <span class="text-xs font-medium text-gray-700">Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Duration -->
+                        <div class="mt-16 flex justify-between text-xs text-gray-500">
+                            <span>Week 0</span>
+                            <span>Week 3</span>
+                            <span>Week 7</span>
+                            <span>Week 15</span>
+                            <span>Week 21</span>
+                            <span>Week 24</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 px-4 sm:px-6 lg:px-8 mt-12">
+            <div class="max-w-6xl mx-auto text-center">
+                <p class="text-blue-300 text-sm">Yan3 Investor Pitch Deck</p>
+                <p class="text-gray-400 text-xs mt-2">Smart Energy Monitoring for Indian Homes</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab Navigation
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Competitor Map Interaction
+            const competitorPoints = document.querySelectorAll('.competitor-point');
+            const competitorInfo = document.getElementById('competitor-info');
+            const competitorName = document.getElementById('competitor-name');
+            const competitorDescription = document.getElementById('competitor-description');
+            
+            const competitorData = {
+                'Fluentgrid': {
+                    name: 'Fluentgrid',
+                    description: 'Enterprise-level solution with high intelligence but very expensive. Primarily targets utilities and large businesses, not individual consumers.'
+                },
+                'SATEC': {
+                    name: 'SATEC',
+                    description: 'Advanced metering infrastructure with sophisticated analytics but high cost. Focused on industrial and utility applications.'
+                },
+                'DIN-Rail': {
+                    name: 'DIN-Rail Smart Meters',
+                    description: 'Lower cost but requires professional installation. Limited intelligence and consumer features, primarily focused on basic monitoring.'
+                },
+                'Emporia': {
+                    name: 'Emporia Vue',
+                    description: 'Imported solution with high price point. Requires additional hardware for appliance-level insights and lacks local support.'
+                },
+                'Iskraemeco': {
+                    name: 'Iskraemeco MT260',
+                    description: 'Utility-grade meter with high price and low consumer intelligence. Not designed for direct consumer purchase or use.'
+                },
+                'Yan3': {
+                    name: 'Yan3',
+                    description: 'Combines high intelligence with affordability. Plug & play design with built-in appliance-level insights at a fraction of competitor prices.'
+                }
+            };
+            
+            competitorPoints.forEach(point => {
+                point.addEventListener('mouseover', () => {
+                    const competitor = point.getAttribute('data-competitor');
+                    competitorName.textContent = competitorData[competitor].name;
+                    competitorDescription.textContent = competitorData[competitor].description;
+                    competitorInfo.classList.remove('hidden');
+                });
+            });
+            
+            // ROI Chart
+            const ctx = document.getElementById('roiChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [
+                        {
+                            label: 'Units Sold (thousands)',
+                            data: [50, 100, 200, 350, 500],
+                            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Revenue (₹ Cr)',
+                            data: [22.5, 45, 90, 157.5, 225],
+                            backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                            borderColor: 'rgba(16, 185, 129, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Profit (₹ Cr)',
+                            data: [10, 20, 40, 70, 100],
+                            backgroundColor: 'rgba(245, 158, 11, 0.7)',
+                            borderColor: 'rgba(245, 158, 11, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Amount'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.dataset.label === 'Units Sold (thousands)') {
+                                        label += context.raw + 'k units';
+                                    } else {
+                                        label += '₹' + context.raw + ' Cr';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9619fb5c34a5c230',t:'MTc1MjkyNTYyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
