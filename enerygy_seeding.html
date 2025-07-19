@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Funding Summary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f9ff;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .table-row:nth-child(even) {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+        .table-row:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        .highlight-cell {
+            position: relative;
+        }
+        .highlight-cell::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .table-row:hover .highlight-cell::after {
+            transform: scaleX(1);
+        }
+        .calculation-box {
+            background-color: #f8fafc;
+            border-left: 3px solid #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="gradient-bg text-white py-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Seed Funding Summary</h1>
+                <p class="text-blue-100">Financial Projections & Investment Overview</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <!-- Investment Requirements Section -->
+            <section class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Seed Funding Required: ₹3 Cr
+                        </h2>
+                        <ul class="space-y-3 pl-8 text-gray-700">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>₹2 Cr for R&D (one-time in Year 1)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>₹1 Cr for initial manufacturing scale-up</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                            Unit Economics
+                        </h2>
+                        <ul class="space-y-3 pl-8 text-gray-700">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Selling Price (per unit): ₹4,500</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Manufacturing Cost (per unit): ₹3,000</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span>Units Sold Per Year: 50,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calculation Breakdown Section -->
+            <section class="mb-12">
+                <div class="bg-white rounded-xl shadow-md p-6 card">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        Annual Calculation Breakdown
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="calculation-box p-4 rounded-lg">
+                            <h3 class="font-medium text-gray-800 mb-2">Annual Revenue</h3>
+                            <div class="flex items-center text-gray-700 mb-1">
+                                <span class="text-sm">50,000 units × ₹4,500 per unit = </span>
+                                <span class="ml-auto font-semibold">₹22.5 Cr</span>
+                            </div>
+                        </div>
+                        <div class="calculation-box p-4 rounded-lg">
+                            <h3 class="font-medium text-gray-800 mb-2">Annual Manufacturing Cost</h3>
+                            <div class="flex items-center text-gray-700 mb-1">
+                                <span class="text-sm">50,000 units × ₹3,000 per unit = </span>
+                                <span class="ml-auto font-semibold">₹15.0 Cr</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 calculation-box p-4 rounded-lg">
+                        <h3 class="font-medium text-gray-800 mb-2">First Year Costs</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="flex items-center text-gray-700">
+                                <span class="text-sm">Manufacturing:</span>
+                                <span class="ml-auto font-semibold">₹15.0 Cr</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <span class="text-sm">R&D (Year 1 only):</span>
+                                <span class="ml-auto font-semibold">₹3.0 Cr</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <span class="text-sm">Total Year 1 Costs:</span>
+                                <span class="ml-auto font-semibold">₹18.0 Cr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Financial Projections Section -->
+            <section class="mb-12">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                            5-Year Financial Projection (with ₹3 Cr Seed)
+                        </h2>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="bg-blue-50">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Year</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Revenue (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Mfg Cost (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">R&D Cost (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Total Cost (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Gross Profit (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Cumulative Profit (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">ROI (×)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">1</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">3.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">18.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">4.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">4.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">1.5×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">2</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">7.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">12.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">4.0×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">3</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">7.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">19.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">6.5×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">4</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">7.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">27.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">9.0×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">5</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">0</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">15.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">7.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 font-medium">34.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-blue-600 font-medium">11.5×</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Takeaways Section -->
+            <section>
+                <div class="bg-white rounded-xl shadow-md p-6 card">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Key Takeaways
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 rounded-lg p-4 flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 mb-1">Break-even</h3>
+                                <p class="text-sm text-gray-700">Reached in Year 1 itself (you get back more than ₹3 Cr in profits)</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4 flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 mb-1">Strong ROI</h3>
+                                <p class="text-sm text-gray-700">11.5× in 5 years from ₹3 Cr seed investment</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4 flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 mb-1">Unit Economics</h3>
+                                <p class="text-sm text-gray-700">Extremely strong — 33% gross margin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chart Section -->
+            <section class="mt-12">
+                <div class="bg-white rounded-xl shadow-md p-6 card">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        Financial Growth Visualization
+                    </h2>
+                    <div class="h-64 relative">
+                        <canvas id="financialChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 px-4 sm:px-6 lg:px-8 mt-12">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-blue-300 text-sm">Financial Projections Summary</p>
+                <p class="text-gray-400 text-xs mt-2">This is a financial projection based on provided data. Actual results may vary.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('financialChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [
+                        {
+                            label: 'Revenue',
+                            data: [22.5, 22.5, 22.5, 22.5, 22.5],
+                            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Total Cost',
+                            data: [18, 15, 15, 15, 15],
+                            backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                            borderColor: 'rgba(239, 68, 68, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Cumulative Profit',
+                            data: [4.5, 12, 19.5, 27, 34.5],
+                            backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                            borderColor: 'rgba(16, 185, 129, 1)',
+                            borderWidth: 1,
+                            type: 'line',
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Amount (₹ Cr)'
+                            }
+                        },
+                        y1: {
+                            position: 'right',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Cumulative Profit (₹ Cr)'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ₹' + context.raw + ' Cr';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9619ccb682abdf6e',t:'MTc1MjkyMzcxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
