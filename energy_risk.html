@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan3 Investor Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f9ff;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .table-row:nth-child(even) {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+        .table-row:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        .highlight-cell {
+            position: relative;
+        }
+        .highlight-cell::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .table-row:hover .highlight-cell::after {
+            transform: scaleX(1);
+        }
+        .calculation-box {
+            background-color: #f8fafc;
+            border-left: 3px solid #3b82f6;
+        }
+        .milestone-card {
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .milestone-card:hover {
+            border-left-color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+        .risk-card {
+            border-left: 4px solid #f59e0b;
+        }
+        .risk-card:hover {
+            border-left-color: #f59e0b;
+            background-color: rgba(245, 158, 11, 0.05);
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="gradient-bg text-white py-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Yan3 Investment Opportunity</h1>
+                <p class="text-blue-100 text-xl">Seed Funding & ROI Projections</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <!-- Investment Overview Section -->
+            <section class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Investment Terms
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex justify-between">
+                                <span>Investment Amount:</span>
+                                <span class="font-semibold">₹3 Cr</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Post-Money Valuation:</span>
+                                <span class="font-semibold">₹15 Cr</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Equity Offered:</span>
+                                <span class="font-semibold">20%</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Instrument Type:</span>
+                                <span class="font-semibold">Equity Shares</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Target ROI (Year 5):</span>
+                                <span class="font-semibold text-green-600">16.6×</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                            Unit Economics
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex justify-between">
+                                <span>Selling Price (per unit):</span>
+                                <span class="font-semibold">₹4,500</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Manufacturing Cost (per unit):</span>
+                                <span class="font-semibold">₹2,500</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Gross Margin (per unit):</span>
+                                <span class="font-semibold text-green-600">₹2,000 (44%)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Projected Annual Sales:</span>
+                                <span class="font-semibold">50,000 units</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Year 1 Revenue:</span>
+                                <span class="font-semibold text-green-600">₹22.5 Cr</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 card">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            Investor Protections
+                        </h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Anti-dilution clause (Full ratchet)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Exit/Buyback from Year 4</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Quarterly Reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Pro-rata Rights</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>Board Observer (non-voting)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Use of Funds Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Use of Funds: Milestone-Based Tranches
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tranche 1 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 milestone-card">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Tranche 1: ₹1.2 Cr</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">40% of Funds</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Milestone: Functional Prototype Ready</h4>
+                            <ul class="space-y-2 pl-5 text-sm text-gray-600 list-disc">
+                                <li>Start R&D process</li>
+                                <li>Build alpha version</li>
+                                <li>Finalize bill of materials (BOM)</li>
+                                <li>Complete initial product design</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-1">
+                                <span>Timeline</span>
+                                <span>0-4 months</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tranche 2 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 milestone-card">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Tranche 2: ₹1.0 Cr</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">33% of Funds</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Milestone: Certification + Pilot Batch</h4>
+                            <ul class="space-y-2 pl-5 text-sm text-gray-600 list-disc">
+                                <li>Obtain regulatory approvals (CE/BIS)</li>
+                                <li>Manufacture 100-200 pilot units</li>
+                                <li>Complete field testing</li>
+                                <li>Refine product based on initial feedback</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-1">
+                                <span>Timeline</span>
+                                <span>5-8 months</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 33%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tranche 3 -->
+                    <div class="bg-white rounded-xl shadow-md p-6 milestone-card">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-lg font-semibold text-gray-800">Tranche 3: ₹0.8 Cr</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">27% of Funds</span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Milestone: Market-Ready MVP + Pilot Sales</h4>
+                            <ul class="space-y-2 pl-5 text-sm text-gray-600 list-disc">
+                                <li>Iterate from pilot feedback</li>
+                                <li>Begin B2B onboarding</li>
+                                <li>Set up D2C sales channels</li>
+                                <li>Prepare for full-scale manufacturing</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-1">
+                                <span>Timeline</span>
+                                <span>9-12 months</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 27%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-blue-50 rounded-lg p-4 text-sm text-gray-700">
+                    <p class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>The milestone-based tranche approach ensures investor funds are released only when real progress is made, reducing risk and providing clear checkpoints for both parties.</span>
+                    </p>
+                </div>
+            </section>
+
+            <!-- ROI and Revenue Projection Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    ROI and Revenue Projection Summary
+                </h2>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="bg-gray-50 border-b">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Year</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Units Sold</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Revenue (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Cost (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Gross Profit (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Cumulative Profit (₹)</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">ROI on ₹3 Cr</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">1</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">50,000</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">₹22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹12.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹10.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹10.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">3.3×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">2</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">50,000</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">₹22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹12.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹10.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹20.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">6.6×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">3</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">50,000</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">₹22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹12.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹10.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹30.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">10×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">4</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">50,000</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">₹22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹12.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹10.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹40.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">13.3×</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">5</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">50,000</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 highlight-cell">₹22.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹12.5 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹10.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700 font-medium">₹50.0 Cr</td>
+                                    <td class="py-3 px-4 text-sm text-blue-600 font-medium">16.6×</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Term Sheet Summary Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Term Sheet Summary
+                </h2>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="bg-gray-50 border-b">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Item</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-gray-700">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Investment Amount</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹3 Cr</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Valuation (Post-Money)</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">₹15 Cr</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Equity Offered</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">20%</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Instrument Type</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Equity Shares</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Use of Funds</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">100% toward R&D and pilot production</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Anti-Dilution Clause</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Full ratchet protection for 2 years</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Exit Clause</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Buyback or third-party sale from Year 4</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Reporting Rights</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Monthly/Quarterly reporting</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Pro-Rata Rights</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Yes (future rounds)</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Board Rights</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Board Observer (non-voting)</td>
+                                </tr>
+                                <tr class="table-row border-t border-gray-200">
+                                    <td class="py-3 px-4 text-sm text-gray-800 font-medium">Disbursement</td>
+                                    <td class="py-3 px-4 text-sm text-gray-700">Milestone-based in 3 tranches</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Risk Mitigation Section -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    Risk Mitigation Strategy
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Market Risk -->
+                    <div class="bg-white rounded-xl shadow-md p-6 risk-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 rounded-full p-2 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Market Risk</h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-700 mb-2"><span class="font-medium">Concern:</span> Will customers pay ₹4,500? Is there enough demand for 50K units/year?</p>
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Mitigation:</h4>
+                            <ul class="space-y-2 pl-5 text-sm text-gray-600 list-disc">
+                                <li>Do small pilot before scale</li>
+                                <li>Partner with distributors</li>
+                                <li>Validate price point with early adopters</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Execution Risk -->
+                    <div class="bg-white rounded-xl shadow-md p-6 risk-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 rounded-full p-2 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Execution Risk</h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-700 mb-2"><span class="font-medium">Concern:</span> Can you really manufacture 50K/year and deliver consistently?</p>
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Mitigation:</h4>
+                            <ul class="space-y-2 pl-5 text-sm text-gray-600 list-disc">
+                                <li>Build buffer in supply chain</li>
+                                <li>Start with 10K/year, scale later</li>
+                                <li>Establish multiple manufacturing partners</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- R&D Uncertainty -->
+                    <div class="bg-white rounded-xl shadow-md p-6 risk-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 rounded-full p-2 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">R&D Uncertainty</h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-700 mb-2"><span class="font-medium">Concern:</span> Product may face tech or performance challenges</p>
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Mitigation:</h4>
+                            <ul class="space-y-2 pl-5 text-sm text-gray-600 list-disc">
+                                <li>Break R&D into milestones</li>
+                                <li>Raise ₹3 Cr in tranches</li>
+                                <li>Engage technical advisors early</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Funding Risk -->
+                    <div class="bg-white rounded-xl shadow-md p-6 risk-card">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 rounded-full p-2 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-800">Funding Risk</h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-700 mb-2"><span class="font-medium">Concern:</span> May need more funds before reaching breakeven</p>
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Mitigation:</h4>
+                            <ul class="space-y-2 pl-5 text-sm text-gray-600 list-disc">
+                                <li>Build in buffer for 18 months runway</li>
+                                <li>Keep lean team</li>
+                                <li>Establish clear KPIs for follow-on funding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <!-- Additional Investor Protection Clauses -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Additional Investor Protection Clauses</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700">Milestone-Based Disbursement</p>
+                                    <p class="text-xs text-gray-600">₹3 Cr released only after meeting 3 checkpoints</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700">Investor Oversight or Escrow</p>
+                                    <p class="text-xs text-gray-600">Funds disbursed via shared account or after review</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700">Use of Funds Lock</p>
+                                    <p class="text-xs text-gray-600">₹3 Cr can't be used for salaries, travel, unrelated expenses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fail-Safe Mechanisms -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Fail-Safe Mechanisms</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700">Refund Option (Fail Clause)</p>
+                                    <p class="text-xs text-gray-600">If startup fails to reach Tranche 2, refund balance to investor</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700">Repurpose Clause</p>
+                                    <p class="text-xs text-gray-600">If certification is blocked, pivot option + board approval required</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700">Dilution Protection</p>
+                                    <p class="text-xs text-gray-600">Anti-dilution clause protects investor share value</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chart Section -->
+            <section class="mb-12">
+                <div class="bg-white rounded-xl shadow-md p-6 card">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        ROI Growth Visualization
+                    </h2>
+                    <div class="h-64 relative">
+                        <canvas id="roiChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Takeaways Section -->
+            <section>
+                <div class="bg-white rounded-xl shadow-md p-6 card">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Key Investment Highlights
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-blue-50 rounded-lg p-4 flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 mb-1">Strong Unit Economics</h3>
+                                <p class="text-sm text-gray-700">44% gross margin with ₹2,000 profit per unit</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4 flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 mb-1">Exceptional ROI</h3>
+                                <p class="text-sm text-gray-700">16.6× return in 5 years on ₹3 Cr investment</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 rounded-lg p-4 flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800 mb-1">Risk Mitigation</h3>
+                                <p class="text-sm text-gray-700">Milestone-based funding with strong investor protections</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6 px-4 sm:px-6 lg:px-8 mt-12">
+            <div class="max-w-6xl mx-auto text-center">
+                <p class="text-blue-300 text-sm">Yan3 Investment Opportunity</p>
+                <p class="text-gray-400 text-xs mt-2">This document is for informational purposes only and does not constitute an offer to sell or solicitation of an offer to buy securities.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('roiChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [
+                        {
+                            label: 'Annual Revenue',
+                            data: [22.5, 22.5, 22.5, 22.5, 22.5],
+                            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Annual Cost',
+                            data: [12.5, 12.5, 12.5, 12.5, 12.5],
+                            backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                            borderColor: 'rgba(239, 68, 68, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'ROI Multiple',
+                            data: [3.3, 6.6, 10, 13.3, 16.6],
+                            backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                            borderColor: 'rgba(16, 185, 129, 1)',
+                            borderWidth: 1,
+                            type: 'line',
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Amount (₹ Cr)'
+                            }
+                        },
+                        y1: {
+                            position: 'right',
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'ROI Multiple (×)'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    if (context.dataset.label === 'ROI Multiple') {
+                                        return context.dataset.label + ': ' + context.raw + '×';
+                                    }
+                                    return context.dataset.label + ': ₹' + context.raw + ' Cr';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9619e6bf962b7c70',t:'MTc1MjkyNDc4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
